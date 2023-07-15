@@ -1,0 +1,4 @@
+Name: Kate Martinez
+Age: 19
+Address: 19
+Phone number: 09123456789
