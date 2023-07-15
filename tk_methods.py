@@ -6,6 +6,8 @@ class TkMethods(FileHandling):
         self.main = tk.Tk() #Creating the application main window
         self.main.title("COVID Contact Tracing APP") #Main window title
         self.main.geometry("900x700") #Main window Size
+        window_title = tk.Label(self.main, text="COVID Contact Tracing APP", font=("Courier 10 pitch", 14), bg=self.main['bg']) #Window Title
+        window_title.grid(row=0, column=0, columnspan=3, sticky='ew', padx=10)                      
     #Defining Buttons
     def submit_button (self):
         button_submit = tk.Button(self.main, text="Submit", command = self.save_inputs)
