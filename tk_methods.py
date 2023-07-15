@@ -14,5 +14,5 @@ class TkMethods(FileHandling):
         button_submit.grid(row=15, column=1, padx=10, pady=10)
     def save_inputs(self):
         txt = FileHandling()
-        txt.save_inputs(self.input_name.get(), self.input_age.get(), self.input_address.get(), self.input_number.get())
+        txt.save_inputs(self.input_name.get(), self.input_age.get(), self.input_address.get(), self.input_number.get(), self.var.get())
         txt.storage_file()
