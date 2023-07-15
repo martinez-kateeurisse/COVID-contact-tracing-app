@@ -10,6 +10,8 @@
 #Pseudocode
 
 #Import tkinter (GUI)
+import tkinter as tk
+
 #Create Window
 #Add Widgets 
 	#Buttons
