@@ -58,8 +58,8 @@ class UserInterface(TkMethods):
         #Initializing Symptoms option
         options = ["Fever", "Cough", "Colds", "Sore Throught", "Headache", "Diarrhea", "Loss of taste or Smell","None"]
         self.check = []
-        #Checking symptoms data
+        #Checking symptoms data 
         for i in range(len(options)):
             self.check.append(tk.BooleanVar())
             self.input_symptom = tk.Checkbutton(self.main, text = options[i], variable = options[i])
-            self.input_symptom.grid(row = 15+i, column = 0, padx = 0, pady = 0, sticky = "w")
+            self.input_symptom.grid(row = 15+ (i//2), column = i%2, padx = 0, pady = 0, sticky = "w")
