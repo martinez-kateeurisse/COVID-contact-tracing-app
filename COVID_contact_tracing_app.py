@@ -39,7 +39,7 @@ input_number = tk.Entry(main)		#For the user's number
 input_number.grid(row = 4, column = 1, padx = 5, pady = 5)			
 #Buttons
 button_submit = tk.Button(main, text="Submit")
-button_submit.grid(row=5, column=1, padx=10, pady=10)
+button_submit.grid(row=5, column=1, padx=10, pady=10) 
 		#Text
 		#Radiobutton
 #Write or store the data gathered from the user in a text file
