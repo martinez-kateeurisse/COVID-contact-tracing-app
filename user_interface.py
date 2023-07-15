@@ -61,5 +61,8 @@ class UserInterface(TkMethods):
         #Checking symptoms data 
         for i in range(len(options)):
             self.check.append(tk.BooleanVar())
-            self.input_symptom = tk.Checkbutton(self.main, text = options[i], variable = options[i])
-            self.input_symptom.grid(row = 15+ (i//2), column = i%2, padx = 0, pady = 0, sticky = "w")
+            input_symptom = tk.Checkbutton(self.main, text = options[i], variable = options[i])
+            input_symptom.grid(row = 15+ (i//2), column = i%2, padx = 0, pady = 0, sticky = "w")
+        # Convert selected symptoms to a string
+        selected_symptoms = [options[i] for i in range(len(options)) if self.check[i].get()]
+        self.symptoms_str = ", ".join(selected_symptoms)

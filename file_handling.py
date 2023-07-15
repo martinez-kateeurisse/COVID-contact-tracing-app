@@ -3,7 +3,7 @@
 #Create class
 class FileHandling:
 #Create object of class
-    def save_inputs(self, name, age, address, number, vaccination_status):
+    def save_inputs(self, name, age, address, number, vaccination_status, symptoms_str):
         #Getting the name input
         self.name = name
         #Getting the age input
@@ -14,6 +14,8 @@ class FileHandling:
         self.number = number
         #Getting the vaccination status
         self.vaccination_status = vaccination_status
+        #Getting user's possible symptoms
+        self.symptoms = symptoms_str
     #Write or store the data gathered from the user in a text file
     def storage_file(self):
         #Opening a txt file
@@ -28,3 +30,5 @@ class FileHandling:
             data_file.write(f"Phone number: {self.number}\n") 
             #Appending Vaccination status
             data_file.write(f"Vaccination Status: {self.vaccination_status}\n") 
+            #Appending Symptoms data
+            data_file.write(f"Symptoms: {self.symptoms}\n") 
