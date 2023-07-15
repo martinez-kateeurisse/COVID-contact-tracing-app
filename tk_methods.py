@@ -11,7 +11,7 @@ class TkMethods(FileHandling):
     #Defining Buttons
     def submit_button (self):
         button_submit = tk.Button(self.main, text="Submit", command = self.save_inputs)
-        button_submit.grid(row=5, column=1, padx=10, pady=10)
+        button_submit.grid(row=6, column=1, padx=10, pady=10)
     def save_inputs(self):
         txt = FileHandling()
         txt.save_inputs(self.input_name.get(), self.input_age.get(), self.input_address.get(), self.input_number.get())

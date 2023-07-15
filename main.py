@@ -9,15 +9,9 @@ ui = UserInterface()
 
 #Calling the main window method
 ui.main_window()
-#Calling the method for the name's data
-ui.name()
-#Calling the method for the age's data
-ui.age()
-#Calling the method for the address' data
-ui.address()
-#Calling the method for the number's data
-ui.number()
 
+#Calling the method for Pesonal info data
+ui.personal_info()
 #Submit button for saving inputs
 ui.submit_button()
 
