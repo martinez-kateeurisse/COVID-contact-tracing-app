@@ -7,5 +7,5 @@ class TkMethods:
         self.main.geometry("900x700") #Main window Size
     #Defining Buttons
     def submit_button (self):
-        button_submit = tk.Button(self.main, text="Submit")
-        button_submit.grid(row=5, column=1, padx=10, pady=10) 
+        button_submit = tk.Button(self.main, text="Submit", command = self.save_inputs())
+        button_submit.grid(row=5, column=1, padx=10, pady=10)
