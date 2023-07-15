@@ -39,7 +39,7 @@ class UserInterface(TkMethods):
         self.section1_title = tk.Label(self.main, text="Health Declaration", font=("Courier 10 pitch", 12), bg=self.main['bg']) #Section Title
         self.section1_title.grid(row=7, column=0, columnspan=3, sticky='ew', padx=10)
         self.vaccination_status() #Calling vaccination status method
-        self.symptoms() #Calling symptoms data method
+        self.get_symptoms() #Calling symptoms data method
     #First Question (Vaccination status)
     def vaccination_status (self):
         label_vaccine = tk.Label(self.main, text ="Have you been vaccinated for COVID-19?") #Question label
@@ -52,17 +52,19 @@ class UserInterface(TkMethods):
             self.input_vaccine = tk.Radiobutton(self.main, text=status[i], variable = self.var, value = status[i]) 
             self.input_vaccine.grid(row = 9+i, column = 0, padx = 0, pady = 0, sticky = "w")	     
     #Second Question (Symptoms)
-    def symptoms(self):
-        label_vaccine = tk.Label(self.main, text ="Are you experiencing any symptoms in the past 7 days such as:") #Question label
-        label_vaccine.grid(row = 14, column = 0, padx = 5, pady = 5, sticky = "w") #Position
+    def get_symptoms(self):
+        label_vaccine = tk.Label(self.main, text="Are you experiencing any symptoms in the past 7 days such as:")
+        label_vaccine.grid(row=14, column=0, padx=5, pady=5, sticky="w")
         #Initializing Symptoms option
-        options = ["Fever", "Cough", "Colds", "Sore Throught", "Headache", "Diarrhea", "Loss of taste or Smell","None"]
+        options = ["Fever", "Cough", "Colds", "Sore Throat", "Headache", "Diarrhea", "Loss of taste or Smell", "None"]
         self.check = []
         #Checking symptoms data 
         for i in range(len(options)):
             self.check.append(tk.BooleanVar())
-            input_symptom = tk.Checkbutton(self.main, text = options[i], variable = options[i])
-            input_symptom.grid(row = 15+ (i//2), column = i%2, padx = 0, pady = 0, sticky = "w")
+            input_symptom = tk.Checkbutton(self.main, text=options[i], variable=self.check[i])
+            input_symptom.grid(row=15 + (i // 2), column=i % 2, padx=0, pady=0, sticky="w")
+
         # Convert selected symptoms to a string
         selected_symptoms = [options[i] for i in range(len(options)) if self.check[i].get()]
-        self.symptoms_str = ", ".join(selected_symptoms)
+        symptoms_string = ", ".join(selected_symptoms)
+        return symptoms_string
