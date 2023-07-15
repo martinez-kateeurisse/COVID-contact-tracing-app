@@ -1,0 +1,5 @@
+Name: Kate
+Age: 19
+Address: Philippines
+Phone number: 09123456789
+Vaccination Status: 1st Booster Shot
