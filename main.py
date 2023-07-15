@@ -17,5 +17,9 @@ ui.age()
 ui.address()
 #Calling the method for the number's data
 ui.number()
+
+#Submit button for saving inputs
+ui.submit_button()
+
 #Running the mainloop
 ui.main.mainloop()
