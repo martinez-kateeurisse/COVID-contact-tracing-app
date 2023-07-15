@@ -40,6 +40,7 @@ class UserInterface(TkMethods):
         self.section1_title.grid(row=7, column=0, columnspan=3, sticky='ew', padx=10)
         self.vaccination_status() #Calling vaccination status method
         self.symptoms() #Calling symptoms data method
+    #First Question (Vaccination status)
     def vaccination_status (self):
         label_vaccine = tk.Label(self.main, text ="Have you been vaccinated for COVID-19?") #Question label
         label_vaccine.grid(row = 8, column = 0, padx = 5, pady = 5, sticky = "w") #Position
@@ -50,6 +51,15 @@ class UserInterface(TkMethods):
         for i in range (len(status)):
             self.input_vaccine = tk.Radiobutton(self.main, text=status[i], variable = self.var, value = status[i]) 
             self.input_vaccine.grid(row = 9+i, column = 0, padx = 0, pady = 0, sticky = "w")	     
+    #Second Question (Symptoms)
     def symptoms(self):
         label_vaccine = tk.Label(self.main, text ="Are you experiencing any symptoms in the past 7 days such as:") #Question label
         label_vaccine.grid(row = 14, column = 0, padx = 5, pady = 5, sticky = "w") #Position
+        #Initializing Symptoms option
+        options = ["Fever", "Cough", "Colds", "Sore Throught", "Headache", "Diarrhea", "Loss of taste or Smell","None"]
+        self.check = []
+        #Checking symptoms data
+        for i in range(len(options)):
+            self.check.append(tk.BooleanVar())
+            self.input_symptom = tk.Checkbutton(self.main, text = options[i], variable = options[i])
+            self.input_symptom.grid(row = 15+i, column = 0, padx = 0, pady = 0, sticky = "w")
