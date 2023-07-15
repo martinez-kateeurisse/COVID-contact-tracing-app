@@ -33,3 +33,6 @@ class UserInterface(TkMethods):
         age(self)
         address(self)
         number(self)
+    def health_info (self):
+        self.section1_title = tk.Label(self.main, text="Health Declaration", font=("Courier 10 pitch", 12), bg=self.main['bg']) #Section Title
+        self.section1_title.grid(row=7, column=0, columnspan=3, sticky='ew', padx=10)     

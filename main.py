@@ -12,6 +12,8 @@ ui.main_window()
 
 #Calling the method for Pesonal info data
 ui.personal_info()
+ui.health_info()
+
 #Submit button for saving inputs
 ui.submit_button()
 
