@@ -2,6 +2,7 @@ import tkinter as tk
 from tk_methods import TkMethods
 
 class UserInterface(TkMethods):
+    #Personal Info section
     def personal_info (self):
         self.section1_title = tk.Label(self.main, text="Personal Information", font=("Courier 10 pitch", 12), bg=self.main['bg']) #Section Title
         self.section1_title.grid(row=1, column=0, columnspan=3, sticky='ew', padx=10)     
@@ -33,6 +34,19 @@ class UserInterface(TkMethods):
         age(self)
         address(self)
         number(self)
+    #Health Declaration section
     def health_info (self):
         self.section1_title = tk.Label(self.main, text="Health Declaration", font=("Courier 10 pitch", 12), bg=self.main['bg']) #Section Title
-        self.section1_title.grid(row=7, column=0, columnspan=3, sticky='ew', padx=10)     
+        self.section1_title.grid(row=7, column=0, columnspan=3, sticky='ew', padx=10)
+        self.vaccination_status() #Calling vaccination status method
+    def vaccination_status (self):
+        label_vaccine = tk.Label(self.main, text ="Have you been vaccinated for COVID-19?") #Question label
+        label_vaccine.grid(row = 8, column = 0, padx = 5, pady = 5) #Position
+        var = tk.StringVar()    #Initializing Variable
+        #Initializing options in a list
+        status = ["Not Yet", "1st Dose", "2nd Dode (Fully Vaccinated)", "1st Booster Shot", "2nd Booster Shot"]
+        #Setting radiobuttons for the question
+        for i in range (len(status)):
+            self.input_vaccine = tk.Radiobutton(self.main, text=status[i], variable = var, value = status[i]) 
+            self.input_vaccine.grid(row = 9+i, column = 0, padx = 0, pady = 0, sticky = "w")	     
+        
