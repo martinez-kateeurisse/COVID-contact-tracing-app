@@ -39,9 +39,10 @@ class UserInterface(TkMethods):
         self.section1_title = tk.Label(self.main, text="Health Declaration", font=("Courier 10 pitch", 12), bg=self.main['bg']) #Section Title
         self.section1_title.grid(row=7, column=0, columnspan=3, sticky='ew', padx=10)
         self.vaccination_status() #Calling vaccination status method
+        self.symptoms() #Calling symptoms data method
     def vaccination_status (self):
         label_vaccine = tk.Label(self.main, text ="Have you been vaccinated for COVID-19?") #Question label
-        label_vaccine.grid(row = 8, column = 0, padx = 5, pady = 5) #Position
+        label_vaccine.grid(row = 8, column = 0, padx = 5, pady = 5, sticky = "w") #Position
         self.var = tk.StringVar()    #Initializing Variable    
         #Initializing options in a list
         status = ["Not Yet", "1st Dose", "2nd Dode (Fully Vaccinated)", "1st Booster Shot", "2nd Booster Shot"]
@@ -49,4 +50,6 @@ class UserInterface(TkMethods):
         for i in range (len(status)):
             self.input_vaccine = tk.Radiobutton(self.main, text=status[i], variable = self.var, value = status[i]) 
             self.input_vaccine.grid(row = 9+i, column = 0, padx = 0, pady = 0, sticky = "w")	     
-        
+    def symptoms(self):
+        label_vaccine = tk.Label(self.main, text ="Are you experiencing any symptoms in the past 7 days such as:") #Question label
+        label_vaccine.grid(row = 14, column = 0, padx = 5, pady = 5, sticky = "w") #Position
