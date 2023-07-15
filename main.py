@@ -2,18 +2,20 @@
 
 
 #Import class
-from tk_methods import TkMethods
+from user_interface import UserInterface
 
 #Initialize class
-gui = TkMethods()
+ui = UserInterface()
 
+#Calling the main window method
+ui.main_window()
 #Calling the method for the name's data
-gui.name()
+ui.name()
 #Calling the method for the age's data
-gui.age()
+ui.age()
 #Calling the method for the address' data
-gui.address()
+ui.address()
 #Calling the method for the number's data
-gui.number()
+ui.number()
 #Running the mainloop
-gui.main.mainloop()
+ui.main.mainloop()
