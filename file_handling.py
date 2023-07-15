@@ -3,15 +3,15 @@
 #Create class
 class FileHandling:
 #Create object of class
-    def save_inputs(self):
+    def save_inputs(self, name, age, address, number):
         #Getting the name input
-        self.name = self.input_name.get()
+        self.name = name
         #Getting the age input
-        self.age = self.input_age.get()
+        self.age = age
         #Getting the address input
-        self.address = self.input_address.get()
+        self.address = age
         #Getting the phone number input
-        self.number = self.input_number.get()
+        self.number = number
     #Write or store the data gathered from the user in a text file
     def storage_file(self):
         #Opening a txt file
