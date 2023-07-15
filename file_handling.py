@@ -9,7 +9,7 @@ class FileHandling:
         #Getting the age input
         self.age = age
         #Getting the address input
-        self.address = age
+        self.address = address
         #Getting the phone number input
         self.number = number
     #Write or store the data gathered from the user in a text file
