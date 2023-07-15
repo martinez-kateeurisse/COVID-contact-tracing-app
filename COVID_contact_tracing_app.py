@@ -13,6 +13,10 @@
 import tkinter as tk
 
 #Create Window
+main = tk.Tk() #Creating the application main window
+main.title("COVID Contact Tracing APP") #Main window title
+main.geometry("900x700") #Main window Size
+
 #Add Widgets 
 	#Buttons
 	#Labels
@@ -24,3 +28,4 @@ import tkinter as tk
 	#Let user search for info and display it
 
 #Call the main event loop
+main.mainloop()
