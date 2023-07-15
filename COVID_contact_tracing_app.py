@@ -28,8 +28,16 @@ label_address = tk.Label(main, text ="Address: ") #For the user's address
 label_address.grid(row = 3, column = 0, padx = 5, pady = 5)
 label_number = tk.Label(main, text ="Phone number: ") #For the user's phone number
 label_number.grid(row = 4, column = 0, padx = 5, pady = 5)
+#Entries/ Input Fields
+input_name = tk.Entry(main)		#For the user's name
+input_name.grid(row = 1, column = 1, padx = 5, pady = 5)
+input_age = tk.Entry(main)		#For the user's age
+input_age.grid(row = 2, column = 1, padx = 5, pady = 5)	
+input_address = tk.Entry(main)		#For the user's address
+input_address.grid(row = 3, column = 1, padx = 5, pady = 5)	
+input_number = tk.Entry(main)		#For the user's number
+input_number.grid(row = 4, column = 1, padx = 5, pady = 5)			
 		#Buttons
-		#Entry
 		#Text
 		#Radiobutton
 #Write or store the data gathered from the user in a text file
