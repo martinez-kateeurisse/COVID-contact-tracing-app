@@ -68,5 +68,12 @@ class UserInterface(TkMethods):
             input_symptom.grid(row=15 + (i // 2), column=i % 2, padx=0, pady=0, sticky="w")
             self.check_symptom.append(var)
     def exposure(self):
-        label_exposure = tk.Label(self.main, text ="Have you had exposure to a probable or confirmed case in the last 14 days?")
-        label_exposure.grid(row=21, column=0, padx=5, pady= 5, sticky="w")
+        label_exposure = tk.Label(self.main, text ="Have you had exposure to a probable or confirmed case in the last 14 days?")#Question label
+        label_exposure.grid(row=21, column=0, padx=5, pady= 5, sticky="w") #Position
+        self.ex_var = tk.StringVar()    #Initializing Variable    
+        #Initializing options in a list
+        status = ["Yes", "No", "Uncertain"]
+        #Setting radiobuttons for the question
+        for i in range (len(status)):
+            self.input_exposure = tk.Radiobutton(self.main, text=status[i], variable = self.var, value = status[i]) 
+            self.input_exposure.grid(row = 22+i, column = 0, padx = 0, pady = 0, sticky = "w")	
