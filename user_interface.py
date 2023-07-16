@@ -47,10 +47,10 @@ class UserInterface(TkMethods):
         label_vaccine.grid(row = 8, column = 0, padx = 5, pady = 5, sticky = "w") #Position
         self.var = tk.StringVar()    #Initializing Variable    
         #Initializing options in a list
-        status = ["Not Yet", "1st Dose", "2nd Dode (Fully Vaccinated)", "1st Booster Shot", "2nd Booster Shot"]
+        vac_status = ["Not Yet", "1st Dose", "2nd Dode (Fully Vaccinated)", "1st Booster Shot", "2nd Booster Shot"]
         #Setting radiobuttons for the question
-        for i in range (len(status)):
-            self.input_vaccine = tk.Radiobutton(self.main, text=status[i], variable = self.var, value = status[i]) 
+        for i in range (len(vac_status)):
+            self.input_vaccine = tk.Radiobutton(self.main, text=vac_status[i], variable = self.var, value = vac_status[i]) 
             self.input_vaccine.grid(row = 9+i, column = 0, padx = 0, pady = 0, sticky = "w")	     
     #Second Question (Symptoms)
     def get_symptoms(self):
@@ -72,8 +72,8 @@ class UserInterface(TkMethods):
         label_exposure.grid(row=21, column=0, padx=5, pady= 5, sticky="w") #Position
         self.ex_var = tk.StringVar()    #Initializing Variable    
         #Initializing options in a list
-        status = ["Yes", "No", "Uncertain"]
+        ex_status = ["Yes", "No", "Uncertain"]
         #Setting radiobuttons for the question
-        for i in range (len(status)):
-            self.input_exposure = tk.Radiobutton(self.main, text=status[i], variable = self.var, value = status[i]) 
+        for i in range (len(ex_status)):
+            self.input_exposure = tk.Radiobutton(self.main, text=ex_status[i], variable = self.ex_var, value = ex_status[i]) 
             self.input_exposure.grid(row = 22+i, column = 0, padx = 0, pady = 0, sticky = "w")	

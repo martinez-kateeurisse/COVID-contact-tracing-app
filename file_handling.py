@@ -3,7 +3,7 @@
 #Create class
 class FileHandling:
 #Create object of class
-    def save_inputs(self, name, age, address, number, vaccination_status, get_symptoms):
+    def save_inputs(self, name, age, address, number, vaccination_status, get_symptoms, exposure):
         #Getting the name input
         self.name = name
         #Getting the age input
@@ -16,6 +16,8 @@ class FileHandling:
         self.vaccination_status = vaccination_status
         #Getting user's possible symptoms
         self.symptoms = get_symptoms
+        #getting user's possible exposure
+        self.exposure = exposure
     #Write or store the data gathered from the user in a text file
     def storage_file(self):
         #Opening a txt file
@@ -34,3 +36,5 @@ class FileHandling:
             non_empty_symptoms = [symptom for symptom in self.symptoms if symptom.strip()]
             symptoms_str = ", ".join(non_empty_symptoms)
             data_file.write(f"Symptoms: {symptoms_str}\n")
+            #Appending Exposure status data
+            data_file.write(f"Exposed(?): {self.exposure}\n")            

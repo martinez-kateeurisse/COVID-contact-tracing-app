@@ -34,3 +34,24 @@ Address: Thailand
 Phone number: 782426361
 Vaccination Status: 2nd Booster Shot
 Symptoms: Colds, Sore Throat, Headache, Diarrhea
+Name: Rosieee
+Age: 26
+Address: Australia
+Phone number: 34241423
+Vaccination Status: No
+Symptoms: None
+Exposed(?): 
+Name: Rosieee
+Age: 26
+Address: Aus
+Phone number: w29831
+Vaccination Status: 2nd Booster Shot
+Symptoms: Colds, Headache
+Exposed(?): 
+Name: Rosieee
+Age: 26
+Address: Australia
+Phone number: 324434
+Vaccination Status: 2nd Booster Shot
+Symptoms: None
+Exposed(?): No
