@@ -40,6 +40,7 @@ class UserInterface(TkMethods):
         self.section1_title.grid(row=7, column=0, columnspan=3, sticky='ew', padx=10)
         self.vaccination_status() #Calling vaccination status method
         self.get_symptoms() #Calling symptoms data method
+        self.exposure() #Calling exposure data method
     #First Question (Vaccination status)
     def vaccination_status (self):
         label_vaccine = tk.Label(self.main, text ="Have you been vaccinated for COVID-19?") #Question label
@@ -66,3 +67,6 @@ class UserInterface(TkMethods):
             input_symptom = tk.Checkbutton(self.main, text=option, variable=var, onvalue = option, offvalue="", anchor = "w")
             input_symptom.grid(row=15 + (i // 2), column=i % 2, padx=0, pady=0, sticky="w")
             self.check_symptom.append(var)
+    def exposure(self):
+        label_exposure = tk.Label(self.main, text ="Have you had exposure to a probable or confirmed case in the last 14 days?")
+        label_exposure.grid(row=21, column=0, padx=5, pady= 5, sticky="w")
