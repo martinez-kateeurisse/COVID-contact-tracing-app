@@ -85,4 +85,11 @@ class UserInterface(TkMethods):
                                          "headache, sore throat, fever, diarrhea, caugh, colds, shortness of breath,\n"
                                          "loss of taste or loss of smell in the past 7 days?",
                          justify="left")  #Question label
-        label_contact.grid(row=24, column=0, padx=5, pady=5, sticky ="w") #Position	
+        label_contact.grid(row=24, column=0, padx=5, pady=5, sticky ="w") #Position
+        self.contact_var = tk.StringVar() #Initializing Variable
+        #Initializing options in a list
+        contact_status = ["Yes", "No"]
+        #Setting radiobuttons for the question
+        for i in range (len(contact_status)):
+            self.input_contact = tk.Radiobutton(self.main, text=contact_status[i], variable = self.contact_var, value = contact_status[i])
+            self.input_contact.grid(row=25+i, column = 0, padx = 0, pady = 0, sticky ="w")
