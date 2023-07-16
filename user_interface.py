@@ -41,6 +41,7 @@ class UserInterface(TkMethods):
         self.vaccination_status() #Calling vaccination status method
         self.get_symptoms() #Calling symptoms data method
         self.exposure() #Calling exposure data method
+        self.contact()  #Calling contact data method
     #First Question (Vaccination status)
     def vaccination_status (self):
         label_vaccine = tk.Label(self.main, text ="Have you been vaccinated for COVID-19?") #Question label
@@ -67,6 +68,7 @@ class UserInterface(TkMethods):
             input_symptom = tk.Checkbutton(self.main, text=option, variable=var, onvalue = option, offvalue="", anchor = "w")
             input_symptom.grid(row=15 + (i // 2), column=i % 2, padx=0, pady=0, sticky="w")
             self.check_symptom.append(var)
+    #Third Question (Exposure)
     def exposure(self):
         label_exposure = tk.Label(self.main, text ="Have you had exposure to a probable or confirmed case in the last 14 days?")#Question label
         label_exposure.grid(row=21, column=0, padx=5, pady= 5, sticky="w") #Position
@@ -76,4 +78,11 @@ class UserInterface(TkMethods):
         #Setting radiobuttons for the question
         for i in range (len(ex_status)):
             self.input_exposure = tk.Radiobutton(self.main, text=ex_status[i], variable = self.ex_var, value = ex_status[i]) 
-            self.input_exposure.grid(row = 22+i, column = 0, padx = 0, pady = 0, sticky = "w")	
+            self.input_exposure.grid(row = 22+i, column = 0, padx = 0, pady = 0, sticky = "w")
+    #Fourth Question (Contact)
+    def contact (self):
+        label_contact = tk.Label(self.main, text="Have you had in contact with somebody with body pains\n"
+                                         "headache, sore throat, fever, diarrhea, caugh, colds, shortness of breath,\n"
+                                         "loss of taste or loss of smell in the past 7 days?",
+                         justify="left")  #Question label
+        label_contact.grid(row=24, column=0, padx=5, pady=5, sticky ="w") #Position	
