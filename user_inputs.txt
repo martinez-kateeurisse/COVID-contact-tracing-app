@@ -28,3 +28,9 @@ Address: Korea
 Phone number: 23716317
 Vaccination Status: 2nd Booster Shot
 Symptoms: , , , Sore Throat, Headache, , Loss of taste or Smell, 
+Name: Lisa
+Age: 26
+Address: Thailand
+Phone number: 782426361
+Vaccination Status: 2nd Booster Shot
+Symptoms: Colds, Sore Throat, Headache, Diarrhea

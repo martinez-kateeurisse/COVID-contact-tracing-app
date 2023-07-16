@@ -31,5 +31,6 @@ class FileHandling:
             #Appending Vaccination status
             data_file.write(f"Vaccination Status: {self.vaccination_status}\n") 
             #Appending Symptoms data
-            symptoms_str = ", ".join(self.symptoms)
+            non_empty_symptoms = [symptom for symptom in self.symptoms if symptom.strip()]
+            symptoms_str = ", ".join(non_empty_symptoms)
             data_file.write(f"Symptoms: {symptoms_str}\n")
