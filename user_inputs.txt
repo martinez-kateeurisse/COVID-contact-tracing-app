@@ -22,3 +22,9 @@ Symptoms: Headache
 Symptoms: 
 Symptoms: 
 Symptoms: 
+Name: Jennie
+Age: 27
+Address: Korea
+Phone number: 23716317
+Vaccination Status: 2nd Booster Shot
+Symptoms: , , , Sore Throat, Headache, , Loss of taste or Smell, 
