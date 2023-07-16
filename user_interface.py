@@ -55,16 +55,14 @@ class UserInterface(TkMethods):
     def get_symptoms(self):
         label_vaccine = tk.Label(self.main, text="Are you experiencing any symptoms in the past 7 days such as:")
         label_vaccine.grid(row=14, column=0, padx=5, pady=5, sticky="w")
+        
         #Initializing Symptoms option
+        self.check_symptom = []
         options = ["Fever", "Cough", "Colds", "Sore Throat", "Headache", "Diarrhea", "Loss of taste or Smell", "None"]
-        self.check = []
+        
         #Checking symptoms data 
-        for i in range(len(options)):
-            self.check.append(tk.BooleanVar())
-            input_symptom = tk.Checkbutton(self.main, text=options[i], variable=self.check[i])
+        for i, option in enumerate(options):
+            var = tk.StringVar()
+            input_symptom = tk.Checkbutton(self.main, text=option, variable=var, onvalue = option, offvalue="", anchor = "w")
             input_symptom.grid(row=15 + (i // 2), column=i % 2, padx=0, pady=0, sticky="w")
-
-        # Convert selected symptoms to a string
-        selected_symptoms = [options[i] for i in range(len(options)) if self.check[i].get()]
-        symptoms_string = ", ".join(selected_symptoms)
-        return symptoms_string
+            self.check_symptom.append(var)
