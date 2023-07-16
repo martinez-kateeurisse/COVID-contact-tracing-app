@@ -55,3 +55,11 @@ Phone number: 324434
 Vaccination Status: 2nd Booster Shot
 Symptoms: None
 Exposed(?): No
+Name: Hatdog
+Age: 234321
+Address: Cheesedog
+Phone number: 23123321
+Vaccination Status: 2nd Dode (Fully Vaccinated)
+Symptoms: Fever, Colds, Headache, Loss of taste or Smell
+Exposed(?): Yes
+Contact(to someone with symptoms): Yes

@@ -16,5 +16,6 @@ class TkMethods(FileHandling):
     def save_inputs(self):
         txt = FileHandling()
         user_symptoms = [option.get() for option in self.check_symptom]
-        txt.save_inputs(self.input_name.get(), self.input_age.get(), self.input_address.get(), self.input_number.get(), self.var.get(), user_symptoms, self.ex_var.get())
+        txt.save_inputs(self.input_name.get(), self.input_age.get(), self.input_address.get(), self.input_number.get(), self.var.get(), user_symptoms, self.ex_var.get(),
+                        self.contact_var.get())
         txt.storage_file()
