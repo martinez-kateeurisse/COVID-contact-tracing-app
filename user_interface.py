@@ -42,6 +42,7 @@ class UserInterface(TkMethods):
         self.get_symptoms() #Calling symptoms data method
         self.exposure() #Calling exposure data method
         self.contact()  #Calling contact data method
+        self.test()  #Calling COVID test data method
     #First Question (Vaccination status)
     def vaccination_status (self):
         label_vaccine = tk.Label(self.main, text ="Have you been vaccinated for COVID-19?") #Question label
@@ -95,5 +96,12 @@ class UserInterface(TkMethods):
             self.input_contact.grid(row=25+i, column = 0, padx = 0, pady = 0, sticky ="w")
     #Fifth Question (If tested for COVID)
     def test (self):
-        label_test = tk.Label(self.main, text="Have ypu been tested for COVID-19 in the last 14 days?") #Question label
+        label_test = tk.Label(self.main, text="Have you been tested for COVID-19 in the last 14 days?") #Question label
         label_test.grid(row = 28, column =0, padx = 5, pady =5, sticky ="w") #Position
+        self.test_var = tk.StringVar() #Initializing Variable
+        #Initializing options in a list
+        test_status = ["No", "Yes - Positive", "Yes - Negative", "Yes - Pending"]
+        #Setting radiobuttons for the question
+        for i in range (len(test_status)):
+            self.input_test = tk.Radiobutton(self.main, text = test_status[i], variable = self.test_var, value = test_status[i]) 
+            self.input_test.grid(row=29+i, column = 0, padx=0, pady=0, sticky ="w")
