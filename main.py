@@ -21,6 +21,8 @@ app_frame.pack(fill=BOTH, expand=1)
 app_canvas = Canvas(app_frame)
 app_canvas.pack(side=LEFT, fill=BOTH, expand=1)
     #Add a Scrollbar to the canvas
+app_scrollbar = ttk.Scrollbar(app_frame, orient = VERTICAL, command=app_canvas.yview)
+app_scrollbar.pack(side=RIGHT, fill = Y)
     #Configure the canvas
     #Create another frame inside the canvas
     #Add the new frame to a window in the canvas
