@@ -2,7 +2,7 @@ import tkinter as tk
 from tk_methods import TkMethods
 
 class UserInterface(TkMethods):
-    #Personal Info section
+#Personal Info section
     def personal_info (self):
         self.section1_title = tk.Label(self.main, text="Personal Information", font=("Courier 10 pitch", 12), bg=self.main['bg']) #Section Title
         self.section1_title.grid(row=1, column=0, columnspan=3, sticky='ew', padx=10)     
@@ -34,6 +34,7 @@ class UserInterface(TkMethods):
         age(self)
         address(self)
         number(self)
+
     #Health Declaration section
     def health_info (self):
         self.section1_title = tk.Label(self.main, text="Health Declaration", font=("Courier 10 pitch", 12), bg=self.main['bg']) #Section Title
