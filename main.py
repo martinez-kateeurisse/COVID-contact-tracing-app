@@ -15,9 +15,11 @@ ui.main_window()
 info_frame = (ui.personal_info(), ui.health_info(), ui.submit_button())
 #For adding scrollbar to the window
     #Create a Main Frame
-main_frame = Frame(ui.main)
-main_frame.pack(fill=BOTH, expand=1)
+app_frame = Frame(ui.main)
+app_frame.pack(fill=BOTH, expand=1)
     #Create a Canvas
+app_canvas = Canvas(app_frame)
+app_canvas.pack(side=LEFT, fill=BOTH, expand=1)
     #Add a Scrollbar to the canvas
     #Configure the canvas
     #Create another frame inside the canvas
