@@ -8,7 +8,7 @@ from user_interface import UserInterface
 ui = UserInterface()
 
 #Calling the main window method
-ui.main_window()
+ui.first_window()
 
 #Calling the method for Pesonal info data
 ui.personal_info()
