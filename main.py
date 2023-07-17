@@ -36,13 +36,14 @@ canvas_frame = Frame(app_canvas)
 
 #Add the new frame to a window in the canvas
 app_canvas.create_window((0,0), window = canvas_frame, anchor = "nw")
-#Calling the method for Pesonal info data
-#ui.personal_info()
-#Calling the method for Health Declaration data
-#ui.health_info()
 
-#Submit button for saving inputs
-#ui.submit_button()
+# Create widgets inside the canvas_frame
+for frame in info_frame:
+    frame.pack(in_=canvas_frame, padx=10, pady=10, fill=BOTH, expand=True)
+
+# Update the scroll region of the canvas
+app_canvas.update_idletasks()
+app_canvas.configure(scrollregion=app_canvas.bbox("all"))
 
 #Running the mainloop
 ui.main.mainloop()
