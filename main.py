@@ -14,16 +14,23 @@ ui.main_window()
 
 info_frame = (ui.personal_info(), ui.health_info(), ui.submit_button())
 #For adding scrollbar to the window
-    #Create a Main Frame
+
+#Create a Main Frame
 app_frame = Frame(ui.main)
 app_frame.pack(fill=BOTH, expand=1)
-    #Create a Canvas
+
+#Create a Canvas
 app_canvas = Canvas(app_frame)
 app_canvas.pack(side=LEFT, fill=BOTH, expand=1)
-    #Add a Scrollbar to the canvas
+
+#Add a Scrollbar to the canvas
 app_scrollbar = ttk.Scrollbar(app_frame, orient = VERTICAL, command=app_canvas.yview)
 app_scrollbar.pack(side=RIGHT, fill = Y)
-    #Configure the canvas
+
+#Configure the canvas
+app_canvas.configure(yscrollcommand=app_scrollbar.set)
+app_canvas.bind('<Configure>', lambda e: app_canvas.configure(scrollregion = app_canvas.bbox("all")))
+
     #Create another frame inside the canvas
     #Add the new frame to a window in the canvas
 
