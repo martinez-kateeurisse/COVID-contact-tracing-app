@@ -33,8 +33,9 @@ app_canvas.bind('<Configure>', lambda e: app_canvas.configure(scrollregion = app
 
 #Create another frame inside the canvas
 canvas_frame = Frame(app_canvas)
-    #Add the new frame to a window in the canvas
 
+#Add the new frame to a window in the canvas
+app_canvas.create_window((0,0), window = canvas_frame, anchor = "nw")
 #Calling the method for Pesonal info data
 #ui.personal_info()
 #Calling the method for Health Declaration data
