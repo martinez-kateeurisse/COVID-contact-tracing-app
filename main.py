@@ -7,16 +7,24 @@ from user_interface import UserInterface
 #Initialize class
 ui = UserInterface()
 
-#Calling the main window method
+#First window
 ui.first_window()
+ui.introduction()
+#Running first window mainloop
+ui.first.mainloop()
+#Second Window
+ui.second_window()
+#Running Second window mainloop
+ui.second.mainloop()
+#Third window
+ui.third_window()
+#Running third window mainloop
+ui.third.mainloop() 
 
 #Calling the method for Pesonal info data
-ui.personal_info()
+#ui.personal_info()
 #Calling the method for Health Declaration data
-ui.health_info()
+#ui.health_info()
 
 #Submit button for saving inputs
-ui.submit_button()
-
-#Running the mainloop
-ui.main.mainloop()
+#ui.submit_button()

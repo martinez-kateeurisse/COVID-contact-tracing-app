@@ -2,6 +2,10 @@ import tkinter as tk
 from tk_methods import TkMethods
 
 class UserInterface(TkMethods):
+    def introduction (self):
+        self.section1_title = tk.Label(self.first, text="Welcome", font=("Courier 10 pitch", 12), bg=self.first['bg']) #Section Title
+        self.section1_title.grid(row=1, column=0, columnspan=3, sticky='ew', padx=10)     
+
 #Personal Info section
     def personal_info (self):
         self.section1_title = tk.Label(self.second, text="Personal Information", font=("Courier 10 pitch", 12), bg=self.second['bg']) #Section Title
