@@ -63,3 +63,12 @@ Vaccination Status: 2nd Dode (Fully Vaccinated)
 Symptoms: Fever, Colds, Headache, Loss of taste or Smell
 Exposed(?): Yes
 Contact(to someone with symptoms): Yes
+Name: Kate
+Age: 19
+Address: Philippines
+Phone number: 190323442
+Vaccination Status: 1st Booster Shot
+Symptoms: None
+Exposed(?): No
+Contact(to someone with symptoms): No
+:Tested for COVID(?): No

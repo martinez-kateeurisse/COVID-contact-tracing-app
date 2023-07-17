@@ -45,4 +45,4 @@ class FileHandling:
             #Appending Contact status data
             data_file.write(f"Contact(to someone with symptoms): {self.contact}\n")
             #Appending COVID Testing status data
-            data_file.write(f":Tested for COVID(?): {self.contact}\n")
+            data_file.write(f"Tested for COVID(?): {self.contact}\n")
