@@ -31,7 +31,8 @@ app_scrollbar.pack(side=RIGHT, fill = Y)
 app_canvas.configure(yscrollcommand=app_scrollbar.set)
 app_canvas.bind('<Configure>', lambda e: app_canvas.configure(scrollregion = app_canvas.bbox("all")))
 
-    #Create another frame inside the canvas
+#Create another frame inside the canvas
+canvas_frame = Frame(app_canvas)
     #Add the new frame to a window in the canvas
 
 #Calling the method for Pesonal info data
