@@ -29,11 +29,3 @@ class TkMethods(FileHandling):
         txt.save_inputs(self.input_name.get(), self.input_age.get(), self.input_address.get(), self.input_number.get(), self.var.get(), user_symptoms, self.ex_var.get(),
                         self.contact_var.get(), self.test_var.get())
         txt.storage_file()
-
-#For adding scrollbar to the window
-    #Create a Main Frame
-    #Create a Canvas
-    #Add a Scrollbar to the canvas
-    #Configure the canvas
-    #Create another frame inside the canvas
-    #Add the new frame to a window in the canvas
