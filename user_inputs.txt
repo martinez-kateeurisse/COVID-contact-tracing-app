@@ -72,3 +72,12 @@ Symptoms: None
 Exposed(?): No
 Contact(to someone with symptoms): No
 :Tested for COVID(?): No
+Name: Kate
+Age: fsd
+Address: fsdf
+Phone number: sf
+Vaccination Status: 2nd Dode (Fully Vaccinated)
+Symptoms: Fever, Colds
+Exposed(?): Yes
+Contact(to someone with symptoms): Yes
+Tested for COVID(?): Yes
