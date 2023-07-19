@@ -232,3 +232,8 @@ class UserInterface:
         #Checkbutton for terms and condition
         terms_checkbutton = tk.Checkbutton(self.terms_frame, text="I've read and accept the terms and conditions.")
         terms_checkbutton.grid(row=0,column=1)
+
+    #Submit button
+    def submit_button (self):
+        submit_button = tk.Button(self.frame, text="Submit", bg="gray", fg="white")
+        submit_button.grid(row=3, column=0, sticky="news", padx=20, pady=10)
