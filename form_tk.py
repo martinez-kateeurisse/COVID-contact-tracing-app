@@ -15,7 +15,7 @@ class FormTk(UserInterface):
     def __init__(self):
         main = tk.Tk()
         main.title("COVID Contact Tracing APP") #Title
-        main.geometry("1000x700")  # Window Size
+        main.geometry("1020x700")  # Window Size
 
         # Creating a Canvas
         canvas = tk.Canvas(main)
@@ -35,6 +35,9 @@ class FormTk(UserInterface):
         # Adding the Frame to the Canvas
         canvas.create_window((0, 0), window=self.frame, anchor="nw")
 
+        #Calling image method
+        self.form_image()
+        
         #Calling personal information method
         self.personal_info()
 

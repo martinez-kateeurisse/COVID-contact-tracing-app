@@ -6,6 +6,7 @@
 import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
+from PIL import Image, ImageTk
 
 #Create Class
 class UserInterface:
@@ -253,3 +254,17 @@ class UserInterface:
     def submit_button (self):
         submit_button = tk.Button(self.frame, text="Submit", bg="gray", fg="white")
         submit_button.grid(row=3, column=0, sticky="news", padx=20, pady=10)
+    
+    #Logo image
+    def form_image(self):
+        #Image frame
+        self.image_frame = tk.LabelFrame(self.frame)
+        self.image_frame.grid(row=0, column=1, sticky="news", padx=10, pady=10)      
+        #Original image
+        original_image = Image.open("form_logo.png")
+        #Resize Image
+        resized_image = original_image.resize((150, 270))
+        self.photo = ImageTk.PhotoImage(resized_image)
+        # Create a Label to display the resized image
+        image_label = tk.Label(self.image_frame, image=self.photo)
+        image_label.grid(row=0, column=0, padx=10, pady=10)
