@@ -213,3 +213,14 @@ class UserInterface:
         self.terms_frame = tk.LabelFrame(self.frame, text = "Terms and Condition\n", font=("", 11, "bold"))
         self.terms_frame.grid(row= 2, column=0,sticky="news" ,padx=10, pady=10)
         self.read_terms()
+
+    #Showing Terms and Conditions
+    def show_terms(self):
+        try:
+            #Opening and reading txt file
+            with open("terms_and_condition.txt", "r") as file:
+                terms_and_condition = file.read()
+                #Showing messagebox
+                messagebox.showinfo("Text from File", terms_and_condition)
+        except FileNotFoundError:
+            messagebox.showerror("Error", "File not found!")
