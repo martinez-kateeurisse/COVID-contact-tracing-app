@@ -1,0 +1,14 @@
+COVID Contact Tracing Survey - Terms and Conditions:
+
+1. Purpose: The Survey collects data for COVID-19 contact tracing and public health purposes, in accordance with data protection laws.
+2. Voluntary: Participation is optional, and you can exit the Survey at any time.
+3. Data Use: Data will be confidential and used solely for contact tracing and public health efforts.
+4. Data Sharing: Anonymized data may be shared with public health authorities for combating COVID-19.
+5. Accuracy: Provide accurate information to the best of your knowledge.
+6. No Medical Advice: The Survey does not offer medical advice; consult a healthcare professional for health concerns.
+7. Security: We implement security measures but cannot guarantee absolute data security.
+8. Data Retention: Personal data will be retained as needed for contact tracing and compliance with laws.
+9. Amendments: Terms may change; check the latest version on the Survey platform.
+10.Contact: For questions or concerns, contact [Contact Email or Phone Number].
+
+By continuing, you agree to these terms. Thank you for participating in this crucial public health effort.

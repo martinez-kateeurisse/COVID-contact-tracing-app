@@ -207,3 +207,9 @@ class UserInterface:
         for i in range (len(test_status)):
             input_test = tk.Radiobutton(self.health_info_frame, text = test_status[i], variable = test_var, value = test_status[i]) 
             input_test.grid(row=29+i, column = 0, padx=0, pady=0, sticky ="w")
+    
+    #Accepting terms and condition
+    def terms_and_condition (self):
+        self.terms_frame = tk.LabelFrame(self.frame, text = "Terms and Condition\n", font=("", 11, "bold"))
+        self.terms_frame.grid(row= 2, column=0,sticky="news" ,padx=10, pady=10)
+        self.read_terms()
