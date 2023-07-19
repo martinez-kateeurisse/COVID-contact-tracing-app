@@ -34,11 +34,12 @@ class FormTk(UserInterface):
 
         # Adding the Frame to the Canvas
         canvas.create_window((0, 0), window=self.frame, anchor="nw")
-        
+
         # Updating the Canvas scrollregion
         canvas.update_idletasks()
 
         #Run mainloop
         main.mainloop()
 
-
+#Call the class (test)
+gui = FormTk()
