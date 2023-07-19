@@ -6,3 +6,5 @@
 #Write the collected information in a file (use any format you like)
 #The app should be able to add and search entry
 #Be creative, the realistic the better.
+
+#This python file will serve as the main file where all the methods(windows) will be called and run
