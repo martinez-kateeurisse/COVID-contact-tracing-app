@@ -1,3 +1,84 @@
+#Codes for file handling will be on this python file
+
+#Create class
+class FileHandling:
+#Create object of class
+    def save_inputs(self, name, age, address, number, vaccination_status, get_symptoms, exposure, contact, test):
+        #Getting the name input
+        self.name = name
+        #Getting the age input
+        self.age = age
+        #Getting the address input
+        self.address = address
+        #Getting the phone number input
+        self.number = number
+        #Getting the vaccination status
+        self.vaccination_status = vaccination_status
+        #Getting user's possible symptoms
+        self.symptoms = get_symptoms
+        #Getting user's possible exposure
+        self.exposure = exposure
+        #Getting user's possible contact         
+        self.contact = contact
+        #Getting user's COVID testing info        
+        self.test = test
+    #Write or store the data gathered from the user in a text file
+    def storage_file(self):
+        #Opening a txt file
+        with open("user_inputs.txt", "a") as data_file:
+            #Appending the name info
+            data_file.write(f"Name: {self.name}\n") 
+            #Appending the age info
+            data_file.write(f"Age: {self.age}\n")
+            #Appending the address info
+            data_file.write(f"Address: {self.address}\n")
+            #Appending the phone number info
+            data_file.write(f"Phone number: {self.number}\n") 
+            #Appending Vaccination status
+            data_file.write(f"Vaccination Status: {self.vaccination_status}\n") 
+            #Appending Symptoms data
+            non_empty_symptoms = [symptom for symptom in self.symptoms if symptom.strip()]
+            symptoms_str = ", ".join(non_empty_symptoms)
+            data_file.write(f"Symptoms: {symptoms_str}\n")
+            #Appending Exposure status data
+            data_file.write(f"Exposed(?): {self.exposure}\n")           
+            #Appending Contact status data
+            data_file.write(f"Contact(to someone with symptoms): {self.contact}\n")
+            #Appending COVID Testing status data
+            data_file.write(f"Tested for COVID(?): {self.contact}\n")
+
+#This python file will include tkinter methods such as creating window and buttons
+
+import tkinter as tk
+from file_handling import FileHandling
+from tkinter import ttk
+
+class TkMethods(FileHandling):
+    #Defining main window
+    def main_window (self):
+        self.main = tk.Tk() #Creating the application main window
+        self.main.title("COVID Contact Tracing APP") #Main window title
+        self.main.geometry("700x700") #Main window Size
+        self.main.columnconfigure(0, weight=1)
+        window_title = tk.Label(self.main, text="COVID Contact Tracing APP", font=("Courier 10 pitch", 14), bg=self.main['bg']) #Window Title
+        window_title.grid(row=0, column=0, columnspan=5, sticky='ew', padx=10) 
+    
+    #Next button from personal info to health declaration
+    def personal_info_next (self):
+        button_pi_next = tk.Button(self.main, text="Next", command=self.open_health_info)
+        button_pi_next.grid(row=6, column=0, columnspan=2, pady=10)
+    #Defining Buttons
+    def submit_button (self):
+        button_submit = tk.Button(self.main, text="Submit", command = self.save_inputs)
+        button_submit.grid(row=30, column=1, padx=10, pady=10)
+    #Saving inputs
+    def save_inputs(self):
+        txt = FileHandling()
+        user_symptoms = [option.get() for option in self.check_symptom]
+        txt.save_inputs(self.input_name.get(), self.input_age.get(), self.input_address.get(), self.input_number.get(), self.var.get(), user_symptoms, self.ex_var.get(),
+                        self.contact_var.get(), self.test_var.get())
+        txt.storage_file()
+
 #This python file is for User-interface methods
 
 #Importing modules
@@ -110,3 +191,41 @@ class UserInterface(TkMethods):
         for i in range (len(test_status)):
             self.input_test = tk.Radiobutton(self.main, text = test_status[i], variable = self.test_var, value = test_status[i]) 
             self.input_test.grid(row=29+i, column = 0, padx=0, pady=0, sticky ="w")
+        
+#This will serve as the main file of the program in which the methods will be called
+
+from tkinter import *
+import tkinter as tk
+
+#Import class
+from user_interface import UserInterface
+
+#Initialize class
+ui = UserInterface()
+
+#Calling the main window method
+ui.main_window()
+
+info_frame = (ui.personal_info(), ui.health_info(), ui.submit_button())
+#For adding scrollbar to the window
+
+def on_scroll(*args):
+    text.yview(*args)
+    scrollbar.set(*args)
+
+# Create the text widget
+text = tk.Text(ui.main, wrap=tk.WORD)
+text.grid(row=0, column=0, sticky="nsew")
+
+# Create the vertical scrollbar
+scrollbar = tk.Scrollbar(ui.main, orient="vertical", command=on_scroll)
+scrollbar.grid(row=0, column=1, sticky="ns")
+
+# Configure grid weights to make the widgets resize properly
+ui.main.grid_rowconfigure(0, weight=1)
+ui.main.grid_columnconfigure(0, weight=1)
+
+text.insert("1.0", info_frame)
+
+#Running the mainloop
+ui.main.mainloop()
