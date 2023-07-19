@@ -207,7 +207,23 @@ class UserInterface:
         for i in range (len(test_status)):
             input_test = tk.Radiobutton(self.health_info_frame, text = test_status[i], variable = test_var, value = test_status[i]) 
             input_test.grid(row=29+i, column = 0, padx=0, pady=0, sticky ="w")
-    
+
+    def dos_and_donts(self):
+        # Do's and Dont's Frame
+        info_frame = tk.LabelFrame(self.frame, text="Do's and Don'ts\n", font=("", 11, "bold"))
+        info_frame.grid(row=1, column=1, padx=0, pady=0, sticky="w")
+
+        # Label to display the text from the file
+        label_info = tk.Label(info_frame, text=self.show_info())  # Call the show_info() function
+        label_info.grid(row=0, column=0, padx=5, pady=5, sticky="w")  # Position
+
+    def show_info(self):
+        # Opening and reading txt file
+        with open("dos_and_donts.txt", "r") as file:
+            dos_and_donts = file.read()
+            return dos_and_donts
+            
+
     #Accepting terms and condition
     def terms_and_condition (self):
         self.terms_frame = tk.LabelFrame(self.frame, text = "Terms and Condition\n", font=("", 11, "bold"))

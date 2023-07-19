@@ -43,6 +43,8 @@ class FormTk(UserInterface):
 
         #Calling terms and condition method
         self.terms_and_condition()
+        
+        self.dos_and_donts()
 
         #Calling submit button method
         self.submit_button()
