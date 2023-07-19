@@ -224,3 +224,11 @@ class UserInterface:
                 messagebox.showinfo("Text from File", terms_and_condition)
         except FileNotFoundError:
             messagebox.showerror("Error", "File not found!")
+    
+    #Button to read terms and condition
+    def read_terms(self):
+        read_button = tk.Button(self.terms_frame, text="Read Terms and Conditions here", command= self.show_terms)
+        read_button.grid(row=0, column=0, padx=10, pady=10)       
+        #Checkbutton for terms and condition
+        terms_checkbutton = tk.Checkbutton(self.terms_frame, text="I've read and accept the terms and conditions.")
+        terms_checkbutton.grid(row=0,column=1)
