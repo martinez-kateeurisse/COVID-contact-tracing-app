@@ -211,7 +211,7 @@ class UserInterface:
     def dos_and_donts(self):
         # Do's and Dont's Frame
         info_frame = tk.LabelFrame(self.frame, text="Do's and Don'ts\n", font=("", 11, "bold"))
-        info_frame.grid(row=1, column=1, padx=0, pady=0, sticky="w")
+        info_frame.grid(row=1, column=1, padx=0, pady=0, sticky="news")
 
         # Label to display the text from the file
         label_info = tk.Label(info_frame, text=self.show_info())  # Call the show_info() function
