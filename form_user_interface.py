@@ -119,3 +119,91 @@ class UserInterface:
     def personal_info_configure(self):
         for widget in self.personal_info_frame.winfo_children():
             widget.grid_configure(padx=10, pady=5)
+    
+    #Saving Health Declaration
+    def health_info(self):
+        #Health Info Frame
+        self.health_info_frame = tk.LabelFrame(self.frame, text = "Health Declaration\n", font=("", 11, "bold"))
+        self.health_info_frame.grid(row= 1, column=0,sticky="news" ,padx=10, pady=10)
+        
+        #Calling info methods
+        self.vaccine_status()
+        self.symptoms()
+        self.exposure()
+        self.contact()
+        self.test()
+
+    #First Question (Vaccination Status)
+    def vaccine_status(self):
+        label_vaccine = tk.Label(self.health_info_frame, text ="Have you been vaccinated for COVID-19?") #Question label
+        label_vaccine.grid(row = 0, column = 0, padx = 5, pady = 5, sticky = "w") #Position
+        var = tk.StringVar()    #Initializing Variable    
+        
+        #Initializing options in a list
+        vac_status = ["Not Yet", "1st Dose", "2nd Dose (Fully Vaccinated)", "1st Booster Shot", "2nd Booster Shot"]
+        
+        #Setting radiobuttons for the question
+        for i in range (len(vac_status)):
+            input_vaccine = tk.Radiobutton(self.health_info_frame, text=vac_status[i], variable = var, value = vac_status[i]) 
+            input_vaccine.grid(row = 1+i, column = 0, padx = 0, pady = 0, sticky = "w")	     
+   
+    #Second Question (Symptoms)
+    def symptoms (self):
+        label_symptoms = tk.Label(self.health_info_frame, text="Are you experiencing any symptoms in the past 7 days such as:")
+        label_symptoms.grid(row=14, column=0, padx=5, pady=5, sticky="w")
+                
+        #Initializing Symptoms option
+        check_symptom = []
+        options = ["Fever", "Cough", "Colds", "Sore Throat", "Headache", "Diarrhea", "Loss of taste or Smell", "None"]
+                
+        #Checking symptoms data 
+        for i, option in enumerate(options):
+            var = tk.StringVar()
+            input_symptom = tk.Checkbutton(self.health_info_frame, text=option, variable=var, onvalue = option, offvalue="", anchor = "w")
+            input_symptom.grid(row=15 + (i // 2), column=i % 2, padx=0, pady=0, sticky="w")
+            check_symptom.append(var)
+    
+    #Third Question (Exposure to a probable positive case)
+    def exposure(self):
+        label_exposure = tk.Label(self.health_info_frame, text ="Have you had exposure to a probable or confirmed case in the last 14 days?")#Question label
+        label_exposure.grid(row=21, column=0, padx=5, pady= 5, sticky="w") #Position
+        ex_var = tk.StringVar()    #Initializing Variable    
+        
+        #Initializing options in a list
+        ex_status = ["Yes", "No", "Uncertain"]
+        
+        #Setting radiobuttons for the question
+        for i in range (len(ex_status)):
+            input_exposure = tk.Radiobutton(self.health_info_frame, text=ex_status[i], variable = ex_var, value = ex_status[i]) 
+            input_exposure.grid(row = 22+i, column = 0, padx = 0, pady = 0, sticky = "w")
+
+    #Fourth Question (Contact with someone with symptoms)
+    def contact (self):
+        label_contact = tk.Label(self.health_info_frame, text="Have you had in contact with somebody with body pains\n"
+                                                "headache, sore throat, fever, diarrhea, caugh, colds, shortness of breath,\n"
+                                                "loss of taste or loss of smell in the past 7 days?",
+                                justify="left")  #Question label
+        label_contact.grid(row=24, column=0, padx=5, pady=5, sticky ="w") #Position
+        contact_var = tk.StringVar() #Initializing Variable
+        
+        #Initializing options in a list
+        contact_status = ["Yes", "No"]
+        
+        #Setting radiobuttons for the question
+        for i in range (len(contact_status)):
+            input_contact = tk.Radiobutton(self.health_info_frame, text=contact_status[i], variable = contact_var, value = contact_status[i])
+            input_contact.grid(row=25+i, column = 0, padx = 0, pady = 0, sticky ="w")
+    
+    #Fifth Question (If tested for COVID)
+    def test (self):
+        label_test = tk.Label(self.health_info_frame, text="Have you been tested for COVID-19 in the last 14 days?") #Question label
+        label_test.grid(row = 28, column =0, padx = 5, pady =5, sticky ="w") #Position
+        test_var = tk.StringVar() #Initializing Variable
+        
+        #Initializing options in a list
+        test_status = ["No", "Yes - Positive", "Yes - Negative", "Yes - Pending"]
+        
+        #Setting radiobuttons for the question
+        for i in range (len(test_status)):
+            input_test = tk.Radiobutton(self.health_info_frame, text = test_status[i], variable = test_var, value = test_status[i]) 
+            input_test.grid(row=29+i, column = 0, padx=0, pady=0, sticky ="w")
