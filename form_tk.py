@@ -57,6 +57,3 @@ class FormTk(UserInterface):
         
         #Run mainloop
         main.mainloop()
-
-#Call the class (test)
-gui = FormTk()

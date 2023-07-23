@@ -41,10 +41,18 @@ class IntroUserInterface:
 
     #Button for opening the form
     def open_form(self):
-        button_open_form = tk.Button(self.intro, text="Start Contact Tracing Form", bg="plum1", fg="DarkOrchid4", font=("", 17, "bold"))
+        button_open_form = tk.Button(self.intro, text="Start Contact Tracing Form", bg="plum1", fg="DarkOrchid4", font=("", 17, "bold"), command=self.open_form_window)
         button_open_form.place(x=46, y=500)
         button_open_form.config(width=30, height=3)
+    
+    #Opening window
+    def open_form_window(self):
+        # Close the introduction window
+        self.intro.destroy()
 
+        # Create and open the form window
+        self.form_window = self.FormTk()
+        
     #Button for covid info
     def covid_info(self):
 
@@ -102,4 +110,4 @@ class IntroUserInterface:
         # Create the button with the resized image
         button = tk.Button(self.intro, image=button_image, borderwidth=0)
         button.image = button_image 
-        button.place(x=850, y=250) 
+        button.place(x=850, y=250)  

@@ -43,8 +43,7 @@ class IntroWindow(IntroUserInterface):
         # Run mainloop
         self.intro.mainloop()
 
-# Call the class (test)
-intro_gui = IntroWindow()
+
 
 
 

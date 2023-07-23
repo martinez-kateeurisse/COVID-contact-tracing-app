@@ -8,3 +8,10 @@
 #Be creative, the realistic the better.
 
 #This python file will serve as the main file where all the methods(windows) will be called and run
+
+from intro import IntroWindow
+from form_tk import FormTk
+
+intro_gui = IntroWindow()
+
+form_gui = FormTk()
