@@ -16,9 +16,13 @@ class IntroWindow:
         intro.geometry("1020x700") #Window size
     #Create Canvas
         intro_canvas = tk.Canvas(intro)
-        intro_canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        intro_canvas.grid(columnspan=3)
     #Add Image
-
+        intro_logo = Image.open("Intro_logo.png")
+        intro_logo = ImageTk.PhotoImage(intro_logo)
+        logo_label = tk.Label(image = intro_logo)
+        logo_label.image = intro_logo
+        logo_label.grid(column=2, row=0)
     #Run mainloop
         intro.mainloop()
 
