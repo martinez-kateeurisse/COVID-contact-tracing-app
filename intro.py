@@ -2,40 +2,34 @@
 
 #This python file will have the codes for introduction window
 
-#Import necessary modules
+# Import necessary modules
 import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
 from intro_ui import IntroUserInterface
-#Create class
+
+# Create class
 class IntroWindow(IntroUserInterface):
-#Create window
+    # Create window
     def __init__(self):
         self.intro = tk.Tk()
-        self.intro.title("COVID Contact Tracing APP") #Title
-        self.intro.geometry("1020x700") #Window size
-    #Create Canvas
-        intro_canvas = tk.Canvas(self.intro)
-        intro_canvas.grid(columnspan=2)
-    
-    # Creating a Frame inside the Canvas
-        self.intro_frame = tk.Frame(intro_canvas)
+        self.intro.title("COVID Contact Tracing APP")
+        self.intro.geometry("1020x700")
 
-    # Adding the Frame to the Canvas
-        intro_canvas.create_window((0, 0), window=self.intro_frame, anchor="nw")
+        #Adding background image
+        image_path = "intro_bg.png"
+
+        # Call the __init__ method 
+        super().__init__(self.intro)
         
-    #Call itroduction logo 
-        self.intro_image()
-    #Call open button
-        self.open_form()
-    #Call search engine label button
-        self.search_engine()
-    #Call Covid info button
-        self.covid_info()
-    #Run mainloop
+        #Calling the canvas with the background image
+        self.canvas_background(image_path)
+
+        # Run mainloop
         self.intro.mainloop()
 
-#Call the class (test)
-intro_gui = IntroWindow() 
+# Call the class (test)
+intro_gui = IntroWindow()
+
 
 
