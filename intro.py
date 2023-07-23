@@ -34,6 +34,12 @@ class IntroWindow(IntroUserInterface):
         #Calling covid info button
         self.app_info()
 
+        #Calling search entry
+        self.search_entry()
+
+        #Calling search button
+        self.search_button()
+
         # Run mainloop
         self.intro.mainloop()
 
