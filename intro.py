@@ -29,6 +29,6 @@ class IntroWindow(IntroUserInterface):
         self.intro.mainloop()
 
 #Call the class (test)
-intro_gui = IntroWindow()
+intro_gui = IntroWindow() 
 
 

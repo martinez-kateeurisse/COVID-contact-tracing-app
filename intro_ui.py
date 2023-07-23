@@ -11,8 +11,9 @@ from PIL import Image, ImageTk
 class IntroUserInterface:
     #Button for entering form window
     def open_form(self):
-        button_open_form = tk.Button(self.intro, text ="Start Contact Tracing Form", bg = "plum1", fg="DarkOrchid4")
+        button_open_form = tk.Button(self.intro, text ="Start Contact Tracing Form", bg = "plum1", fg="DarkOrchid4", font=("", 11, "bold"))
         button_open_form.grid(row = 3, column = 0, sticky ="news", padx=20, pady=20)
+        button_open_form.config(width=15, height=2)
 
     #Search Engine
     #Displaying search result
