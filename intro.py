@@ -14,15 +14,13 @@ class IntroWindow:
         intro = tk.Tk()
         intro.title("COVID Contact Tracing APP") #Title
         intro.geometry("1020x700") #Window size
-
-    
-
-
     #Create Canvas
+        intro_canvas = tk.Canvas(intro)
+        intro_canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
     #Add Image
 
     #Run mainloop
         intro.mainloop()
-        
+
 #Call the class (test)
 intro_gui = IntroWindow()
