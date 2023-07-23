@@ -19,7 +19,7 @@ class IntroWindow(IntroUserInterface):
         #Adding background image
         image_path = "intro_bg.png"
 
-        # Call the __init__ method 
+        # Calling the __init__ method 
         super().__init__(self.intro)
         
         #Calling the canvas with the background image
@@ -28,8 +28,11 @@ class IntroWindow(IntroUserInterface):
         #Calling form opening button
         self.open_form()
 
-        #Call covid info button
+        #Calling covid info button
         self.covid_info()
+
+        #Calling covid info button
+        self.app_info()
 
         # Run mainloop
         self.intro.mainloop()
