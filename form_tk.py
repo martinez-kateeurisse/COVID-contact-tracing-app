@@ -8,10 +8,10 @@ from tkinter import ttk
 from tkinter import messagebox
 
 #Import class
-from form_user_interface import UserInterface
+from file_handling import FileHandling
 
 #Create class
-class FormTk(UserInterface):
+class FormTk(FileHandling):
     def __init__(self):
         main = tk.Tk()
         main.title("COVID Contact Tracing APP") #Title
