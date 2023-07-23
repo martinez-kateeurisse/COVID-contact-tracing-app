@@ -25,6 +25,9 @@ class IntroWindow(IntroUserInterface):
         #Calling the canvas with the background image
         self.canvas_background(image_path)
 
+        #Calling form opening button
+        self.open_form()
+
         # Run mainloop
         self.intro.mainloop()
 

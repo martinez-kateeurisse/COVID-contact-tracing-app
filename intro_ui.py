@@ -38,3 +38,9 @@ class IntroUserInterface:
 
         # Bind the resize_image 
         canvas.bind("<Configure>", self.resize_image)
+
+        #Button for opening the form
+    def open_form(self):
+        button_open_form = tk.Button(self.intro, text="Start Contact Tracing Form", bg="plum1", fg="DarkOrchid4", font=("", 17, "bold"))
+        button_open_form.place(x=46, y=500)
+        button_open_form.config(width=30, height=3)
