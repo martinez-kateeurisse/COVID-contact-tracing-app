@@ -39,8 +39,27 @@ class IntroUserInterface:
         # Bind the resize_image 
         canvas.bind("<Configure>", self.resize_image)
 
-        #Button for opening the form
+    #Button for opening the form
     def open_form(self):
         button_open_form = tk.Button(self.intro, text="Start Contact Tracing Form", bg="plum1", fg="DarkOrchid4", font=("", 17, "bold"))
         button_open_form.place(x=46, y=500)
         button_open_form.config(width=30, height=3)
+
+    #Button for covid info
+    def covid_info(self):
+
+        # Load the image for the button
+        image = Image.open("covid_info.png")
+
+        # Resize the image 
+        new_width = 150
+        new_height = 170
+        resized_image = image.resize((new_width, new_height), Image.ANTIALIAS)
+
+        # Create the PhotoImage from the resized image
+        button_image = ImageTk.PhotoImage(resized_image)
+
+        # Create the button with the resized image
+        button = tk.Button(self.intro, image=button_image, borderwidth=0)
+        button.image = button_image 
+        button.place(x=600, y=30) 

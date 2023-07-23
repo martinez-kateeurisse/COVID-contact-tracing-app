@@ -28,6 +28,9 @@ class IntroWindow(IntroUserInterface):
         #Calling form opening button
         self.open_form()
 
+        #Call covid info button
+        self.covid_info()
+
         # Run mainloop
         self.intro.mainloop()
 
