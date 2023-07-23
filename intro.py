@@ -16,15 +16,22 @@ class IntroWindow(IntroUserInterface):
         self.intro.geometry("1020x700") #Window size
     #Create Canvas
         intro_canvas = tk.Canvas(self.intro)
-        intro_canvas.grid(columnspan=3)
-    #Add Image
-        intro_logo = Image.open("Intro_logo.png")
-        intro_logo = ImageTk.PhotoImage(intro_logo)
-        logo_label = tk.Label(image = intro_logo)
-        logo_label.image = intro_logo
-        logo_label.grid(column=0, row=0)
+        intro_canvas.grid(columnspan=2)
+    
+    # Creating a Frame inside the Canvas
+        self.intro_frame = tk.Frame(intro_canvas)
+
+    # Adding the Frame to the Canvas
+        intro_canvas.create_window((0, 0), window=self.intro_frame, anchor="nw")
+        
+    #Call itroduction logo 
+        self.intro_image()
     #Call open button
         self.open_form()
+    #Call search engine label button
+        self.search_engine()
+    #Call Covid info button
+        self.covid_info()
     #Run mainloop
         self.intro.mainloop()
 
