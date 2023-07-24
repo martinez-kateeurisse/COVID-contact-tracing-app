@@ -31,11 +31,21 @@ class FileHandling(UserInterface):
         self.contperson_num = self.input_contperson_num.get()
         self.contperson_rel = self.input_contperson_rel.get()
         self.contperson_email = self.input_contperson_email.get()
-
+        
+        # Retrieve health-related question inputs
+        self.vaccine_status = self.var.get()
+        self.symptoms = [option.get() for option in self.check_symptom]
+        self.non_empty_symptoms = [symptom for symptom in self.symptoms if symptom.strip()]
+        self.symptoms_str = ", ".join(self.non_empty_symptoms)
+        self.exposure = self.ex_var.get()
+        self.contact = self.contact_var.get()
+        self.test = self.test_var.get()
+        
         # Create a list with the user input data
         data_to_add = [self.last_name, self.first_name, self.middle_name, self.age, self.gender,
                        self.street_address, self.city_address, self.state_address, self.country_address, self.postal_code,
-                       self.phone_number, self.email, self.contact_person, self.contperson_num, self.contperson_rel, self.contperson_email]
+                       self.phone_number, self.email, self.contact_person, self.contperson_num, self.contperson_rel, self.contperson_email, 
+                       self.vaccine_status, self.symptoms_str, self.exposure, self.contact, self.test]
 
         # Replace 'file.csv' with the path to your CSV file
         csv_file = 'data_file.csv'

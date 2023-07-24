@@ -138,14 +138,14 @@ class UserInterface:
     def vaccine_status(self):
         self.label_vaccine = tk.Label(self.health_info_frame, text ="Have you been vaccinated for COVID-19?") #Question label
         self.label_vaccine.grid(row = 0, column = 0, padx = 5, pady = 5, sticky = "w") #Position
-        var = tk.StringVar()    #Initializing Variable    
+        self.var = tk.StringVar()    #Initializing Variable    
         
         #Initializing options in a list
         vac_status = ["Not Yet", "1st Dose", "2nd Dose (Fully Vaccinated)", "1st Booster Shot", "2nd Booster Shot"]
         
         #Setting radiobuttons for the question
         for i in range (len(vac_status)):
-            self.input_vaccine = tk.Radiobutton(self.health_info_frame, text=vac_status[i], variable = var, value = vac_status[i]) 
+            self.input_vaccine = tk.Radiobutton(self.health_info_frame, text=vac_status[i], variable = self.var, value = vac_status[i]) 
             self.input_vaccine.grid(row = 1+i, column = 0, padx = 0, pady = 0, sticky = "w")	     
    
     #Second Question (Symptoms)
@@ -168,14 +168,14 @@ class UserInterface:
     def exposure(self):
         self.label_exposure = tk.Label(self.health_info_frame, text ="Have you had exposure to a probable or confirmed case in the last 14 days?")#Question label
         self.label_exposure.grid(row=21, column=0, padx=5, pady= 5, sticky="w") #Position
-        ex_var = tk.StringVar()    #Initializing Variable    
+        self.ex_var = tk.StringVar()    #Initializing Variable    
         
         #Initializing options in a list
         ex_status = ["Yes", "No", "Uncertain"]
         
         #Setting radiobuttons for the question
         for i in range (len(ex_status)):
-            self.input_exposure = tk.Radiobutton(self.health_info_frame, text=ex_status[i], variable = ex_var, value = ex_status[i]) 
+            self.input_exposure = tk.Radiobutton(self.health_info_frame, text=ex_status[i], variable = self.ex_var, value = ex_status[i]) 
             self.input_exposure.grid(row = 22+i, column = 0, padx = 0, pady = 0, sticky = "w")
 
     #Fourth Question (Contact with someone with symptoms)
@@ -185,28 +185,28 @@ class UserInterface:
                                                 "loss of taste or loss of smell in the past 7 days?",
                                 justify="left")  #Question label
         self.label_contact.grid(row=24, column=0, padx=5, pady=5, sticky ="w") #Position
-        contact_var = tk.StringVar() #Initializing Variable
+        self.contact_var = tk.StringVar() #Initializing Variable
         
         #Initializing options in a list
         contact_status = ["Yes", "No"]
         
         #Setting radiobuttons for the question
         for i in range (len(contact_status)):
-            input_contact = tk.Radiobutton(self.health_info_frame, text=contact_status[i], variable = contact_var, value = contact_status[i])
+            input_contact = tk.Radiobutton(self.health_info_frame, text=contact_status[i], variable = self.contact_var, value = contact_status[i])
             input_contact.grid(row=25+i, column = 0, padx = 0, pady = 0, sticky ="w")
     
     #Fifth Question (If tested for COVID)
     def test (self):
         self.label_test = tk.Label(self.health_info_frame, text="Have you been tested for COVID-19 in the last 14 days?") #Question label
         self.label_test.grid(row = 28, column =0, padx = 5, pady =5, sticky ="w") #Position
-        test_var = tk.StringVar() #Initializing Variable
+        self.test_var = tk.StringVar() #Initializing Variable
         
         #Initializing options in a list
         test_status = ["No", "Yes - Positive", "Yes - Negative", "Yes - Pending"]
         
         #Setting radiobuttons for the question
         for i in range (len(test_status)):
-            input_test = tk.Radiobutton(self.health_info_frame, text = test_status[i], variable = test_var, value = test_status[i]) 
+            input_test = tk.Radiobutton(self.health_info_frame, text = test_status[i], variable = self.test_var, value = test_status[i]) 
             input_test.grid(row=29+i, column = 0, padx=0, pady=0, sticky ="w")
 
     def dos_and_donts(self):
