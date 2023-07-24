@@ -268,3 +268,11 @@ class UserInterface:
         # Create a Label to display the resized image
         image_label = tk.Label(self.image_frame, image=self.photo)
         image_label.grid(row=0, column=0, padx=10, pady=10)
+    
+    #Saving inputs
+    def save_inputs(self):
+        txt = self.FileHandling()
+        user_symptoms = [option.get() for option in self.check_symptom]
+        txt.save_inputs(self.input_last_name.get(),self.input_first_name.get(), self.input_middle_name.get(), self.input_age.get(), self.input_address.get(), self.input_number.get(), self.var.get(), user_symptoms, self.ex_var.get(),
+                        self.contact_var.get(), self.test_var.get())
+        txt.storage_file()
