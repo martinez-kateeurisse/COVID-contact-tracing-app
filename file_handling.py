@@ -43,32 +43,56 @@ class FileHandling(UserInterface):
         self.contact = self.contact_var.get()
         self.test = self.test_var.get()
         
-        # Create a list with the user input data
-        # Create a single string with the user input data
-        data_to_add = [
-            f"Name: {self.last_name}, {self.first_name}, {self.middle_name}",
-            f"Age: {self.age}",
-            f"Gender: {self.gender}",
-            f"Address: {self.street_address}, {self.city_address}, {self.state_address}, {self.country_address}",
-            f"Postal code: {self.postal_code}",
-            f"Phone Number: {self.phone_number}",
-            f"Email: {self.email}",
-            f"Contact Person: {self.contact_person}",
-            f"Phone Number: {self.contperson_num}",
-            f"Relationship: {self.contperson_rel}",
-            f"Email: {self.contperson_email}",
-            f"Vaccination Status: {self.vaccine_status}",
-            f"Symptoms: {self.symptoms_str}",
-            f"Exposed to a probable case: {self.exposure}",
-            f"Has Contact (to a probable case): {self.contact}",
-            f"Tested for COVID: {self.test}"
-        ]
-        
-        #File path
+        # Create a list to store the user input data
+        data_to_add = []
+
+        # Name section
+        name_str = f"Name: {self.last_name}"
+        if self.first_name:
+            name_str += f", {self.first_name}"
+        if self.middle_name:
+            name_str += f", {self.middle_name}"
+        data_to_add.append(name_str)
+
+        # Age, Gender, and other fields
+        data_to_add.append(f"Age: {self.age}")
+        data_to_add.append(f"Gender: {self.gender}")
+
+        # Address section
+        address_str = f"Address:"
+        if self.street_address:
+            address_str += f" {self.street_address}"
+        if self.city_address:
+            address_str += f", {self.city_address}"
+        if self.state_address:
+            address_str += f", {self.state_address}"
+        if self.country_address:
+            address_str += f", {self.country_address}"
+        data_to_add.append(address_str)
+
+        # Postal code, Phone Number, and other fields
+        data_to_add.append(f"Postal code: {self.postal_code}")
+        data_to_add.append(f"Phone Number: {self.phone_number}")
+        data_to_add.append(f"Email: {self.email}")
+        data_to_add.append(f"Contact Person: {self.contact_person}")
+        data_to_add.append(f"Phone Number: {self.contperson_num}")
+        data_to_add.append(f"Relationship: {self.contperson_rel}")
+        data_to_add.append(f"Email: {self.contperson_email}")
+        data_to_add.append(f"Vaccination Status: {self.vaccine_status}")
+        data_to_add.append(f"Symptoms: {self.symptoms_str}")
+        data_to_add.append(f"Exposed to a probable case: {self.exposure}")
+        data_to_add.append(f"Has Contact (to a probable case): {self.contact}")
+        data_to_add.append(f"Tested for COVID: {self.test}")
+
+
+        # Join the data into a single string with line breaks
+        data_to_add_str = '\n'.join(data_to_add)
+
+        #Csv file path
         csv_file = 'data_file.csv'
 
         # Call the function to add data to the CSV file
-        self.storage_file(csv_file, '\n'.join(data_to_add)) 
+        self.storage_file(csv_file, data_to_add_str)
     
     # Search function using the search_csv function
     def search_data(self):
