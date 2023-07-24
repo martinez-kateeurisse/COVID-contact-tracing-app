@@ -8,11 +8,11 @@ from form_user_interface import UserInterface
 
 #Create class
 class FileHandling(UserInterface):  
-    #Open csv file and append data
-    def storage_file(self,csv_file, data):
+    # Open csv file and append data
+    def storage_file(self, csv_file, data):
         with open(csv_file, mode='a', newline='') as csvfile:
             writer = csv.writer(csvfile)
-            writer.writerow(data)
+            writer.writerow([data])
     
     #Saving submitted data
     def submit_data(self):
@@ -44,16 +44,31 @@ class FileHandling(UserInterface):
         self.test = self.test_var.get()
         
         # Create a list with the user input data
-        data_to_add = [self.last_name, self.first_name, self.middle_name, self.age, self.gender,
-                       self.street_address, self.city_address, self.state_address, self.country_address, self.postal_code,
-                       self.phone_number, self.email, self.contact_person, self.contperson_num, self.contperson_rel, self.contperson_email, 
-                       self.vaccine_status, self.symptoms_str, self.exposure, self.contact, self.test]
-
-        # Replace 'file.csv' with the path to your CSV file
+        # Create a single string with the user input data
+        data_to_add = [
+            f"Name: {self.last_name}, {self.first_name}, {self.middle_name}",
+            f"Age: {self.age}",
+            f"Gender: {self.gender}",
+            f"Address: {self.street_address}, {self.city_address}, {self.state_address}, {self.country_address}",
+            f"Postal code: {self.postal_code}",
+            f"Phone Number: {self.phone_number}",
+            f"Email: {self.email}",
+            f"Contact Person: {self.contact_person}",
+            f"Phone Number: {self.contperson_num}",
+            f"Relationship: {self.contperson_rel}",
+            f"Email: {self.contperson_email}",
+            f"Vaccination Status: {self.vaccine_status}",
+            f"Symptoms: {self.symptoms_str}",
+            f"Exposed to a probable case: {self.exposure}",
+            f"Has Contact (to a probable case): {self.contact}",
+            f"Tested for COVID: {self.test}"
+        ]
+        
+        #File path
         csv_file = 'data_file.csv'
 
         # Call the function to add data to the CSV file
-        self.storage_file(csv_file, data_to_add) 
+        self.storage_file(csv_file, '\n'.join(data_to_add)) 
     
     # Search function using the search_csv function
     def search_data(self):
