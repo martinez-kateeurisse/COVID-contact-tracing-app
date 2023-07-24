@@ -92,10 +92,10 @@ class IntroUserInterface:
 
     #Search Engine Entry field
     def search_entry(self):
-        search_entry = tk.Entry(self.intro, font=("COnstantia", 15),width=30)
+        search_entry = tk.Entry(self.intro, font=("Constantia", 18),width=30,)
         search_entry.place(x=550, y=250)
-        self.search_results_listbox = tk.Listbox(self.intro,bg="thistle1", font=("Constantia", 10), width=50, height=10)
-        self.search_results_listbox.place(x=590, y=320)
+        self.search_results_listbox = tk.Listbox(self.intro,bg="thistle1", font=("Constantia", 11), width=45, height=13)
+        self.search_results_listbox.place(x=590, y=350)
         return search_entry
     def search_button(self):
         # Load the image for the button
@@ -103,7 +103,7 @@ class IntroUserInterface:
 
         # Resize the image 
         new_width = 150
-        new_height = 30
+        new_height = 37
         resized_image = image.resize((new_width, new_height), Image.ANTIALIAS)
 
         # Create the PhotoImage from the resized image
@@ -112,4 +112,4 @@ class IntroUserInterface:
         # Create the button with the resized image
         button = tk.Button(self.intro, image=button_image, borderwidth=0, command=self.search_data)
         button.image = button_image 
-        button.place(x=850, y=250) 
+        button.place(x=850, y=248) 

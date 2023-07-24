@@ -9,12 +9,9 @@
 
 #This python file will serve as the main file where all the methods(windows) will be called and run
 
-#Importing classes
+#Importing class
 from intro import IntroWindow
-#from form_tk import FormTk
-#from file_handling import FileHandling
+
 #Calling Introduction class
 intro_gui = IntroWindow()
-#gui = FileHandling()
-#Calling Form class 
-#form_gui = FormTk()
+

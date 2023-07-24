@@ -99,7 +99,7 @@ class FileHandling(UserInterface):
         # Get the search term from the Entry widget
         search_term = self.search_entry_widget.get()
 
-        # Replace 'file.csv' with the path to your CSV file
+        # CSV file path
         csv_file = 'data_file.csv'
 
         # Call the search_csv function to find matching rows
@@ -117,6 +117,7 @@ class FileHandling(UserInterface):
         else:
             # Display a message if no matching rows are found
             messagebox.showinfo("Search Results", "No matching rows found.")
+    
     # Search function using the search_csv function
     def search_csv(self, csv_file, search_term):
         found_rows = []
