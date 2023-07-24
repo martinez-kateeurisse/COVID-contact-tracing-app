@@ -6,10 +6,11 @@
 import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
-from intro_ui import IntroUserInterface
 
+from intro_ui import IntroUserInterface
+from file_handling import FileHandling
 # Create class
-class IntroWindow(IntroUserInterface):
+class IntroWindow(FileHandling, IntroUserInterface):
     # Create window
     def __init__(self):
         self.intro = tk.Tk()
@@ -35,7 +36,8 @@ class IntroWindow(IntroUserInterface):
         self.app_info()
 
         #Calling search entry
-        self.search_entry()
+        self.search_entry_widget = self.search_entry()
+
 
         #Calling search button
         self.search_button()

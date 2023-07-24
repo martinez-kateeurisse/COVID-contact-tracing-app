@@ -2,6 +2,8 @@
 
 #Import modules
 import csv
+import tkinter as tk
+from tkinter import messagebox
 from form_user_interface import UserInterface
 
 #Create class
@@ -52,3 +54,39 @@ class FileHandling(UserInterface):
 
         # Call the function to add data to the CSV file
         self.storage_file(csv_file, data_to_add) 
+    
+    # Search function using the search_csv function
+    def search_data(self):
+        # Get the search term from the Entry widget
+        search_term = self.search_entry_widget.get()
+
+        # Replace 'file.csv' with the path to your CSV file
+        csv_file = 'data_file.csv'
+
+        # Call the search_csv function to find matching rows
+        found_rows = self.search_csv(csv_file, search_term)
+
+        if found_rows:
+            # Display the matching rows in the search_results_listbox
+            self.search_results_listbox.delete(0, tk.END)  # Clear the listbox
+            for row in found_rows:
+                self.search_results_listbox.insert(tk.END, ', '.join(row))
+        else:
+            # Display a message if no matching rows are found
+            messagebox.showinfo("Search Results", "No matching rows found.")
+
+    # Search function using the search_csv function
+    def search_csv(self, csv_file, search_term):
+        found_rows = []
+        with open(csv_file, mode='r') as csvfile:
+            reader = csv.reader(csvfile)
+            headers = next(reader)  # Read the header row to get column names
+
+            for row in reader:
+                # Perform the search on the desired column (e.g., assuming the column index is 0 for the last name)
+                if search_term.lower() in row[0].lower():
+                    found_rows.append(row)
+
+        return found_rows
+
+    

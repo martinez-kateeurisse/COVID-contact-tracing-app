@@ -11,10 +11,10 @@
 
 #Importing classes
 from intro import IntroWindow
-from form_tk import FormTk
-
+#from form_tk import FormTk
+#from file_handling import FileHandling
 #Calling Introduction class
 intro_gui = IntroWindow()
-
+#gui = FileHandling()
 #Calling Form class 
-form_gui = FormTk()
+#form_gui = FormTk()

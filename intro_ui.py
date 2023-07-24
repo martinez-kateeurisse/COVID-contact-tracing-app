@@ -5,7 +5,7 @@
 import tkinter as tk
 from PIL import Image, ImageTk
 from tkinter import PhotoImage
-
+from form_tk import FormTk
 #Create Class
 class IntroUserInterface:
 #Define instance variables
@@ -51,7 +51,7 @@ class IntroUserInterface:
         self.intro.destroy()
 
         # Create and open the form window
-        self.form_window = self.FormTk()
+        self.form_window = FormTk()
         
     #Button for covid info
     def covid_info(self):
@@ -94,7 +94,9 @@ class IntroUserInterface:
     def search_entry(self):
         search_entry = tk.Entry(self.intro, font=("COnstantia", 15),width=30)
         search_entry.place(x=550, y=250)
-        
+        self.search_results_listbox = tk.Listbox(self.intro,bg="thistle1", font=("Constantia", 10), width=50, height=10)
+        self.search_results_listbox.place(x=590, y=320)
+        return search_entry
     def search_button(self):
         # Load the image for the button
         image = Image.open("search_button.png")
@@ -108,6 +110,6 @@ class IntroUserInterface:
         button_image = ImageTk.PhotoImage(resized_image)
 
         # Create the button with the resized image
-        button = tk.Button(self.intro, image=button_image, borderwidth=0)
+        button = tk.Button(self.intro, image=button_image, borderwidth=0, command=self.search_data)
         button.image = button_image 
-        button.place(x=850, y=250)  
+        button.place(x=850, y=250) 
