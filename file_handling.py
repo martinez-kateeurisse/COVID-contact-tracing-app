@@ -47,7 +47,7 @@ class FileHandling(UserInterface):
         data_to_add = []
 
         # Name section
-        name_str = f"Name: {self.last_name}"
+        name_str = f"\nName: {self.last_name}"
         if self.first_name:
             name_str += f", {self.first_name}"
         if self.middle_name:
@@ -109,11 +109,14 @@ class FileHandling(UserInterface):
             # Display the matching rows in the search_results_listbox
             self.search_results_listbox.delete(0, tk.END)  # Clear the listbox
             for row in found_rows:
-                self.search_results_listbox.insert(tk.END, ', '.join(row))
+                # Split the row_str by newline character to handle multiline text
+                row_str = row[0].split('\n')
+                # Insert each line as a separate item in the listbox
+                for line in row_str:
+                    self.search_results_listbox.insert(tk.END, line)
         else:
             # Display a message if no matching rows are found
             messagebox.showinfo("Search Results", "No matching rows found.")
-
     # Search function using the search_csv function
     def search_csv(self, csv_file, search_term):
         found_rows = []
@@ -127,5 +130,3 @@ class FileHandling(UserInterface):
                     found_rows.append(row)
 
         return found_rows
-
-    

@@ -1,65 +1,24 @@
-Martinez,Kate E*****,L******,19,Female,P*****,G****,******,Philippines,****,**********,*****@gmail.com,****,****,parent,****@gmail.com
-Try2,dsf,fsdf,11,Female,fdsdf,fsd,fsd,fdf,fdf,fd,df,fd,df,fd,fd,1st Dose,"Fever, , Colds, , Headache, , , ",Yes,Yes,Yes - Pending
-,,,1,,,,,,,,,,,,,2nd Dose (Fully Vaccinated),"Fever, Cough, Colds, Headache, Loss of taste or Smell",No,Yes,No
-,,,1,,,,,,,,,,,,,,,,,
-Kate,,,1,,,,,,,,,,,,,,,,,
-Martinez,cdvd,dgsd,19,Female,gdgs,gdsg,gsf,dgf,gsfg,gfg,fgf,fgf,gffg,gfg,fgf,1st Dose,"Fever, Colds, Headache",No,No,No
-Kim,dfsddffd,sfd,1,,,,,,,,,,,,,,,,,
-"Name: ('Martinez', ',', 'Kate *****', 'L*****')
-","Age: 19
-","Gender: Female
-","Address: ('Purok 5', ',', 'G****', ',', 'M*******', ',', 'Philippines')
-","Postal code: 4325423
-","Phone Number: 5435465
-","Email: gdbsfbsh@gmail.com
-","Contact Person: CSBhbcdbhvd
-","Phone Number: 324324
-","Relationship: parent
-","Email: vvd@gmail.com
-","Vaccination Status: 1st Booster Shot
-","Symptomps: Fever, Colds, Headache
-","Exposed to a probable case: No
-","Has Contact(to a probable case): Yes
-","Tested for COVID: Yes - Pending
+"Name: Martinez, Kate, cdv
+Age: 19
+Gender: Female
+Address: vdvd, fdgdf, vcvb, bvb
+Postal code: bvb
+Phone Number: bcvb
+Email: bvbc
+Contact Person: bvbvb
+Phone Number: vbvb
+Relationship: bvb
+Email: vbv
+Vaccination Status: 1st Booster Shot
+Symptoms: Fever, Colds, Headache
+Exposed to a probable case: Yes
+Has Contact (to a probable case): No
+Tested for COVID: Yes - Pending"
 "
-"Name: ('kim', 'jisoo', 'vfdv')
-","Age: 28
-","Gender: Female
-","Address: ('', '', '', '')
-","Postal code: 
-","Phone Number: 
-","Email: 
-","Contact Person: 
-","Phone Number: 
-","Relationship: 
-","Email: 
-","Vaccination Status: 2nd Booster Shot
-","Symptomps: None
-","Exposed to a probable case: No
-","Has Contact(to a probable case): No
-","Tested for COVID: Yes - Negative
-"
-N,a,m,e,:, ,J,e,n,n,i,e, ,",", ,",", ,"
-",A,g,e,:, ,1,"
-",G,e,n,d,e,r,:, ,"
-",A,d,d,r,e,s,s,:, ,",", ,",", ,",", ,"
-",P,o,s,t,a,l, ,c,o,d,e,:, ,"
-",P,h,o,n,e, ,N,u,m,b,e,r,:, ,"
-",E,m,a,i,l,:, ,"
-",C,o,n,t,a,c,t, ,P,e,r,s,o,n,:, ,"
-",P,h,o,n,e, ,N,u,m,b,e,r,:, ,"
-",R,e,l,a,t,i,o,n,s,h,i,p,:, ,"
-",E,m,a,i,l,:, ,"
-",V,a,c,c,i,n,a,t,i,o,n, ,S,t,a,t,u,s,:, ,"
-",S,y,m,p,t,o,m,s,:, ,"
-",E,x,p,o,s,e,d, ,t,o, ,a, ,p,r,o,b,a,b,l,e, ,c,a,s,e,:, ,"
-",H,a,s, ,C,o,n,t,a,c,t, ,(,t,o, ,a, ,p,r,o,b,a,b,l,e, ,c,a,s,e,),:, ,"
-",T,e,s,t,e,d, ,f,o,r, ,C,O,V,I,D,:, ,"
-"
-"Name: Manobal, , 
-Age: 26
+Name: Lalisa
+Age: 1
 Gender: 
-Address: , , , 
+Address:
 Postal code: 
 Phone Number: 
 Email: 
@@ -67,21 +26,14 @@ Contact Person:
 Phone Number: 
 Relationship: 
 Email: 
-Vaccination Status: 2nd Booster Shot
-Symptoms: None
-Exposed to a probable case: No
-Has Contact (to a probable case): No
-Tested for COVID: No"
-"Name: Park, Rosieee
-Age: 1
-Address:
-Vaccination Status: 2nd Booster Shot
-Symptoms: Colds, Headache
-Exposed to a probable case: No
-Has Contact (to a probable case): No
-Tested for COVID: No"
-"Name: Kim, Jennie
-Age: 28
+Vaccination Status: 
+Symptoms: 
+Exposed to a probable case: 
+Has Contact (to a probable case): 
+Tested for COVID: "
+"
+Name: Hakdok
+Age: 16
 Gender: Female
 Address:
 Postal code: 
@@ -91,8 +43,8 @@ Contact Person:
 Phone Number: 
 Relationship: 
 Email: 
-Vaccination Status: 2nd Booster Shot
-Symptoms: 
+Vaccination Status: 
+Symptoms: Colds, Headache, Diarrhea, Loss of taste or Smell
 Exposed to a probable case: 
 Has Contact (to a probable case): 
 Tested for COVID: "
