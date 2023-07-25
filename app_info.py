@@ -68,7 +68,7 @@ class AppInfo:
             button_image = ImageTk.PhotoImage(resized_image)
 
             # Create the button with the resized image
-            button = tk.Button(self.covid_info, image=button_image, borderwidth=0, command = self.open_covid_info_window)
+            button = tk.Button(self.app_info, image=button_image, borderwidth=0, command = self.open_covid_info_window)
             button.image = button_image 
             button.place(x=35, y=180)
     #Button for app info
@@ -85,7 +85,7 @@ class AppInfo:
         button_image = ImageTk.PhotoImage(resized_image)
 
         # Create the button with the resized image
-        button = tk.Button(self.covid_info, image=button_image, borderwidth=0)
+        button = tk.Button(self.app_info, image=button_image, borderwidth=0)
         button.image = button_image 
         button.place(x=35, y=370) 
     #Button for home
@@ -102,7 +102,7 @@ class AppInfo:
         button_image = ImageTk.PhotoImage(resized_image)
 
         # Create the button with the resized image
-        button = tk.Button(self.covid_info, image=button_image, borderwidth=0, command = self.back_to_home)
+        button = tk.Button(self.app_info, image=button_image, borderwidth=0, command = self.back_to_home)
         button.image = button_image 
         button.place(x=38, y=550) 
     #Opening app info window
