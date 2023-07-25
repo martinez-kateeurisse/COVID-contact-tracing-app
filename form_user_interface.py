@@ -280,3 +280,12 @@ class UserInterface:
         txt.save_inputs(self.input_last_name.get(),self.input_first_name.get(), self.input_middle_name.get(), self.input_age.get(), self.input_address.get(), self.input_number.get(), self.var.get(), user_symptoms, self.ex_var.get(),
                         self.contact_var.get(), self.test_var.get())
         txt.storage_file()
+
+    #Opening last window
+    def open_last_window(self):
+        # Close the covid_info window
+        self.main.destroy()
+        #Importing class
+        from last_window import LastWindow
+        # Open the app info window
+        self.last_window = LastWindow()

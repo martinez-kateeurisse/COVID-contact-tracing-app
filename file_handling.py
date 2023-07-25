@@ -96,6 +96,9 @@ class FileHandling(UserInterface):
 
             # Call the function to add data to the CSV file
             self.storage_file(csv_file, data_to_add_str)
+
+            #opening last window
+            self.open_last_window()
         #If terms and condition is not checked, message box will pop up
         else:
             messagebox.showwarning(title="Accepting Terms and Condition", message = "This Contact Tracing Form requires you to accept the terms and Condition inorder to submit. Make sure to read it by pressing the button beside the checkbutton. Thank you!")

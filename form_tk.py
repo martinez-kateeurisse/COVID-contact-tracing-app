@@ -13,16 +13,16 @@ from file_handling import FileHandling
 #Create class
 class FormTk(FileHandling):
     def __init__(self):
-        main = tk.Tk()
-        main.title("COVID Contact Tracing APP") #Title
-        main.geometry("1020x700")  # Window Size
+        self.main = tk.Tk()
+        self.main.title("COVID Contact Tracing APP") #Title
+        self.main.geometry("1020x700")  # Window Size
 
         # Creating a Canvas
-        canvas = tk.Canvas(main)
+        canvas = tk.Canvas(self.main)
         canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
 
         # Adding a Scrollbar
-        scrollbar = ttk.Scrollbar(main, command=canvas.yview)
+        scrollbar = ttk.Scrollbar(self.main, command=canvas.yview)
         scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
 
         # Configuring the Canvas
@@ -56,4 +56,4 @@ class FormTk(FileHandling):
         canvas.update_idletasks()
         
         #Run mainloop
-        main.mainloop()
+        self.main.mainloop()

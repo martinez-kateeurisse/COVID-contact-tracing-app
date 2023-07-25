@@ -154,4 +154,4 @@ class LastWindow:
         self.last.destroy()
 
 # Create an instance of the last window class(test)
-last = LastWindow()
+#last = LastWindow()
