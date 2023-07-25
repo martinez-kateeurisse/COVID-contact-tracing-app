@@ -14,4 +14,4 @@ class AppInfo:
         #run mainloop
         self.app_info.mainloop()
 
-info = AppInfo()
+#info = AppInfo()

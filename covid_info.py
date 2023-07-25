@@ -1,7 +1,8 @@
 #Import module
 import tkinter as tk
 from PIL import Image, ImageTk
-
+from app_info import AppInfo
+from intro import IntroWindow
 #Create class
 class CovidInfo:
     def __init__(self):
@@ -78,7 +79,7 @@ class CovidInfo:
         button_image = ImageTk.PhotoImage(resized_image)
 
         # Create the button with the resized image
-        button = tk.Button(self.covid_info, image=button_image, borderwidth=0)
+        button = tk.Button(self.covid_info, image=button_image, borderwidth=0, command = self.open_app_info_window)
         button.image = button_image 
         button.place(x=35, y=370) 
     #Button for home
@@ -95,9 +96,25 @@ class CovidInfo:
         button_image = ImageTk.PhotoImage(resized_image)
 
         # Create the button with the resized image
-        button = tk.Button(self.covid_info, image=button_image, borderwidth=0)
+        button = tk.Button(self.covid_info, image=button_image, borderwidth=0, command = self.back_to_home)
         button.image = button_image 
         button.place(x=38, y=550) 
+        
+    #Opening app info window
+    def open_app_info_window(self):
+        # Close the covid_info window
+        self.covid_info.destroy()
+
+        # Open the app info window
+        self.app_info = AppInfo()
+    
+    #Backing home
+    def back_to_home (self):
+        # Close the covid_info window
+        self.covid_info.destroy()
+
+        # Open the app info window
+        self.intro_window = IntroWindow()
 
 # Create an instance of the CovidInfo class(test)
 info = CovidInfo()
