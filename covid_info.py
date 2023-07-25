@@ -1,8 +1,7 @@
 #Import module
 import tkinter as tk
 from PIL import Image, ImageTk
-from app_info import AppInfo
-from intro import IntroWindow
+
 #Create class
 class CovidInfo:
     def __init__(self):
@@ -117,4 +116,4 @@ class CovidInfo:
         self.intro_window = IntroWindow()
 
 # Create an instance of the CovidInfo class(test)
-info = CovidInfo()
+#info = CovidInfo()

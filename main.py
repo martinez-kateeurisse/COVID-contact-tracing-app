@@ -11,6 +11,9 @@
 
 #Importing class
 from intro import IntroWindow
+from app_info import AppInfo
+from covid_info import CovidInfo
+from intro import IntroWindow
 
 #Calling Introduction class
 intro_gui = IntroWindow()
