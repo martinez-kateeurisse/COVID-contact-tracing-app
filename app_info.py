@@ -2,6 +2,7 @@
 import tkinter as tk
 from PIL import Image, ImageTk
 
+
 #Create class
 class AppInfo:
     #Create Window
@@ -30,7 +31,7 @@ class AppInfo:
         self.app_info_button()
 
         self.home_button()
-        
+
         #run mainloop
         self.app_info.mainloop()
 
@@ -108,7 +109,8 @@ class AppInfo:
     def open_covid_info_window(self):
         # Close the covid_info window
         self.app_info.destroy()
-
+        # Importing class
+        from covid_info import CovidInfo
         # Open the app info window
         self.covid_info = CovidInfo()
     
@@ -116,7 +118,8 @@ class AppInfo:
     def back_to_home (self):
         # Close the covid_info window
         self.app_info.destroy()
-
+        # Importing class
+        from intro import IntroWindow
         # Open the app info window
         self.intro_window = IntroWindow()
 #info = AppInfo()

@@ -10,13 +10,14 @@
 #This python file will serve as the main file where all the methods(windows) will be called and run
 
 #Importing class
-from intro import IntroWindow
-from app_info import AppInfo
-from covid_info import CovidInfo
+import tkinter as tk
 from intro import IntroWindow
 
-class Main(AppInfo,CovidInfo):
-    #Calling Introduction class
-    intro_gui = IntroWindow()
-gui = Main()
+def main():
+    # Create an instance of the IntroWindow class
+    gui = IntroWindow()
+
+if __name__ == "__main__":
+    main()
+
 

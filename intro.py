@@ -9,6 +9,7 @@ from PIL import Image, ImageTk
 
 from intro_ui import IntroUserInterface
 from file_handling import FileHandling
+
 # Create class
 class IntroWindow(FileHandling, IntroUserInterface):
     # Create window

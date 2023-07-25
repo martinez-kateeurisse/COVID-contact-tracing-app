@@ -6,8 +6,10 @@ import tkinter as tk
 from PIL import Image, ImageTk
 from tkinter import PhotoImage
 from form_tk import FormTk
+#from covid_info import CovidInfo
+#from app_info import AppInfo
 #Create Class
-class IntroUserInterface:
+class IntroUserInterface():
 #Define instance variables
     def __init__(self, intro):
         self.intro = intro
@@ -120,7 +122,8 @@ class IntroUserInterface:
     def open_covid_info_window(self):
         # Close the covid_info window
         self.intro.destroy()
-
+        # Importing class
+        from covid_info import CovidInfo
         # Open the app info window
         self.covid_info = CovidInfo()
     
@@ -128,6 +131,7 @@ class IntroUserInterface:
     def open_app_info_window(self):
         # Close the covid_info window
         self.intro.destroy()
-
+        #Importing class
+        from app_info import AppInfo
         # Open the app info window
         self.app_info = AppInfo()

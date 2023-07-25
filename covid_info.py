@@ -103,7 +103,8 @@ class CovidInfo:
     def open_app_info_window(self):
         # Close the covid_info window
         self.covid_info.destroy()
-
+        #Importing class
+        from app_info import AppInfo
         # Open the app info window
         self.app_info = AppInfo()
     
@@ -111,7 +112,8 @@ class CovidInfo:
     def back_to_home (self):
         # Close the covid_info window
         self.covid_info.destroy()
-
+        #Importing class
+        from intro import IntroWindow
         # Open the app info window
         self.intro_window = IntroWindow()
 
