@@ -15,6 +15,8 @@ from app_info import AppInfo
 from covid_info import CovidInfo
 from intro import IntroWindow
 
-#Calling Introduction class
-intro_gui = IntroWindow()
+class Main(AppInfo,CovidInfo):
+    #Calling Introduction class
+    intro_gui = IntroWindow()
+gui = Main()
 

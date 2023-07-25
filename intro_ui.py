@@ -44,14 +44,6 @@ class IntroUserInterface:
         button_open_form = tk.Button(self.intro, text="Start Contact Tracing Form", bg="plum1", fg="DarkOrchid4", font=("", 17, "bold"), command=self.open_form_window)
         button_open_form.place(x=46, y=500)
         button_open_form.config(width=30, height=3)
-    
-    #Opening window
-    def open_form_window(self):
-        # Close the introduction window
-        self.intro.destroy()
-
-        # Create and open the form window
-        self.form_window = FormTk()
         
     #Button for covid info
     def covid_info_button(self):
@@ -68,7 +60,7 @@ class IntroUserInterface:
         button_image = ImageTk.PhotoImage(resized_image)
 
         # Create the button with the resized image
-        button = tk.Button(self.intro, image=button_image, borderwidth=0)
+        button = tk.Button(self.intro, image=button_image, borderwidth=0, command = self.open_covid_info_window)
         button.image = button_image 
         button.place(x=600, y=30) 
     
@@ -86,7 +78,7 @@ class IntroUserInterface:
         button_image = ImageTk.PhotoImage(resized_image)
 
         # Create the button with the resized image
-        button = tk.Button(self.intro, image=button_image, borderwidth=0)
+        button = tk.Button(self.intro, image=button_image, borderwidth=0, command = self.open_app_info_window)
         button.image = button_image 
         button.place(x=800, y=30) 
 
@@ -113,3 +105,29 @@ class IntroUserInterface:
         button = tk.Button(self.intro, image=button_image, borderwidth=0, command=self.search_data)
         button.image = button_image 
         button.place(x=850, y=248) 
+
+    #For Opening windows
+    
+    #Form window
+    def open_form_window(self):
+        # Close the introduction window
+        self.intro.destroy()
+
+        # Create and open the form window
+        self.form_window = FormTk()
+    
+    #Opening covid info window
+    def open_covid_info_window(self):
+        # Close the covid_info window
+        self.intro.destroy()
+
+        # Open the app info window
+        self.covid_info = CovidInfo()
+    
+    #Opening app info window
+    def open_app_info_window(self):
+        # Close the covid_info window
+        self.intro.destroy()
+
+        # Open the app info window
+        self.app_info = AppInfo()

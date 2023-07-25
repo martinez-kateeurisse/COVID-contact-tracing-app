@@ -24,6 +24,13 @@ class AppInfo:
         # Bind the window resize event 
         self.app_info.bind("<Configure>", self.resize_image)
 
+        #Call button methods
+        self.covid_info_button()
+
+        self.app_info_button()
+
+        self.home_button()
+        
         #run mainloop
         self.app_info.mainloop()
 
@@ -39,6 +46,7 @@ class AppInfo:
 
         # Create the background image on the canvas
         self.canvas.create_image(0, 0, anchor=tk.NW, image=self.background)
+
 
     def resize_image(self, event):
         # Update the background image when the window is resized
@@ -111,4 +119,4 @@ class AppInfo:
 
         # Open the app info window
         self.intro_window = IntroWindow()
-info = AppInfo()
+#info = AppInfo()
