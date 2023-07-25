@@ -64,7 +64,7 @@ class LastWindow:
             button_image = ImageTk.PhotoImage(resized_image)
 
             # Create the button with the resized image
-            button = tk.Button(self.last, image=button_image, borderwidth=0)
+            button = tk.Button(self.last, image=button_image, borderwidth=0, command = self.open_covid_info_window)
             button.image = button_image 
             button.place(x=55, y=50)
     #Button for app info
@@ -81,7 +81,7 @@ class LastWindow:
         button_image = ImageTk.PhotoImage(resized_image)
 
         # Create the button with the resized image
-        button = tk.Button(self.last, image=button_image, borderwidth=0)
+        button = tk.Button(self.last, image=button_image, borderwidth=0, command=self.open_app_info_window)
         button.image = button_image 
         button.place(x=55, y=235) 
     #Button for home
@@ -98,7 +98,7 @@ class LastWindow:
         button_image = ImageTk.PhotoImage(resized_image)
 
         # Create the button with the resized image
-        button = tk.Button(self.last, image=button_image, borderwidth=0)
+        button = tk.Button(self.last, image=button_image, borderwidth=0, command = self.back_to_home)
         button.image = button_image 
         button.place(x=55, y=420) 
     #Button for exit
@@ -115,10 +115,43 @@ class LastWindow:
         button_image = ImageTk.PhotoImage(resized_image)
 
         # Create the button with the resized image
-        button = tk.Button(self.last, image=button_image, borderwidth=0)
+        button = tk.Button(self.last, image=button_image, borderwidth=0, command = self.quit_program)
         button.image = button_image 
         button.place(x=30, y=580) 
+
     #For button commands
+        
+    #Opening app info window
+    def open_covid_info_window(self):
+        # Close the covid_info window
+        self.last.destroy()
+        #Importing class
+        from covid_info import CovidInfo
+        # Open the app info window
+        self.app_info = CovidInfo()
+
+    #Opening app info window
+    def open_app_info_window(self):
+        # Close the covid_info window
+        self.last.destroy()
+        #Importing class
+        from app_info import AppInfo
+        # Open the app info window
+        self.app_info = AppInfo()
+    
+    #Back to home
+    def back_to_home (self):
+        # Close the covid_info window
+        self.last.destroy()
+        #Importing class
+        from intro import IntroWindow
+        # Open the app info window
+        self.intro_window = IntroWindow()
+
+    #Quitting program
+    def quit_program(self):
+        # quit program
+        self.last.destroy()
 
 # Create an instance of the last window class(test)
 last = LastWindow()
