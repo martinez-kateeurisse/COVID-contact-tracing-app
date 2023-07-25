@@ -54,7 +54,7 @@ class IntroUserInterface:
         self.form_window = FormTk()
         
     #Button for covid info
-    def covid_info(self):
+    def covid_info_button(self):
 
         # Load the image for the button
         image = Image.open("covid_info.png")
@@ -73,7 +73,7 @@ class IntroUserInterface:
         button.place(x=600, y=30) 
     
     #Button for app info
-    def app_info(self):
+    def app_info_button(self):
         # Load the image for the button
         image = Image.open("app_info.png")
 

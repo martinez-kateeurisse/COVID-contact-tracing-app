@@ -30,14 +30,13 @@ class IntroWindow(FileHandling, IntroUserInterface):
         self.open_form()
 
         #Calling covid info button
-        self.covid_info()
+        self.covid_info_button()
 
         #Calling covid info button
-        self.app_info()
+        self.app_info_button()
 
         #Calling search entry
         self.search_entry_widget = self.search_entry()
-
 
         #Calling search button
         self.search_button()
