@@ -86,8 +86,25 @@ class IntroUserInterface():
 
     #Search Engine Entry field
     def search_entry(self):
-        search_entry = tk.Entry(self.intro, font=("Constantia", 18),width=30,)
+        def on_entry_click(event):
+            if search_entry.get() == "Search for user data":
+                search_entry.delete(0, tk.END)  # Clear the default text
+                search_entry.config(fg="black")  # Change the text color to black
+
+        def on_focus_out(event):
+            if search_entry.get() == "":
+                search_entry.insert(0, "Search for user data")  # Restore the default text
+                search_entry.config(fg="gray")  # Change the text color to gray
+
+        # Create the entry field with placeholder text
+        search_entry = tk.Entry(self.intro, font=("Constantia", 18),width=30, fg="gray")
+        search_entry.insert(0, "Search for user data")  # Set the initial placeholder text
         search_entry.place(x=550, y=250)
+        # Bind events to the entry field
+        search_entry.bind("<FocusIn>", on_entry_click)
+        search_entry.bind("<FocusOut>", on_focus_out)
+
+        #Listbox for data search result
         self.search_results_listbox = tk.Listbox(self.intro,bg="thistle1", font=("Constantia", 11), width=45, height=13)
         self.search_results_listbox.place(x=590, y=350)
         return search_entry
