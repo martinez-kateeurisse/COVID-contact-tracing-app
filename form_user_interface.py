@@ -12,7 +12,7 @@ from PIL import Image, ImageTk
 class UserInterface:
     #Saving Personal Information
     def personal_info(self):
-        self.personal_info_frame = tk.LabelFrame(self.frame, text = "Personal Information\n", font=("", 11, "bold"))
+        self.personal_info_frame = tk.LabelFrame(self.frame, text = "Personal Information\n", font=("", 11, "bold"), bg="lavender", borderwidth=3)
         self.personal_info_frame.grid(row= 0, column=0, padx=10, pady=20)
         #Calling each info method
         self.name()
@@ -24,11 +24,11 @@ class UserInterface:
     #Defining method for Name's data
     def name (self):
         #Name labels
-        self.label_last_name = tk.Label(self.personal_info_frame, text="Last Name")
+        self.label_last_name = tk.Label(self.personal_info_frame, text="Last Name", bg="lavender")
         self.label_last_name.grid(row=0, column=0)
-        self.label_first_name = tk.Label(self.personal_info_frame, text="First Name")
+        self.label_first_name = tk.Label(self.personal_info_frame, text="First Name", bg="lavender")
         self.label_first_name.grid(row=0, column=1)
-        self.label_middle_name = tk.Label(self.personal_info_frame, text="Middle Name")
+        self.label_middle_name = tk.Label(self.personal_info_frame, text="Middle Name", bg="lavender")
         self.label_middle_name.grid(row=0, column=2)
 
         #Name entry fields
@@ -42,7 +42,7 @@ class UserInterface:
     #Defining method for Age's data
     def age (self):
         #Age label, inputs(spinbox)
-        self.label_age = tk.Label(self.personal_info_frame, text="Age")
+        self.label_age = tk.Label(self.personal_info_frame, text="Age", bg="lavender")
         self.age_spinbox = tk.Spinbox(self.personal_info_frame, from_=1, to=120, width = 10)
         self.label_age.grid(row=0, column=3)
         self.age_spinbox.grid(row=1, column=3, padx =10, pady=5)
@@ -50,7 +50,7 @@ class UserInterface:
     #Defining method for Gender's data
     def gender(self):
         #Gender labels, inputs(combobox)
-        self.label_gender = tk.Label(self.personal_info_frame, text="Gender")
+        self.label_gender = tk.Label(self.personal_info_frame, text="Gender", bg="lavender")
         self.gender_combobox = ttk.Combobox(self.personal_info_frame, values = ["Male", "Female", "Other"], width=7)
         self.label_gender.grid(row=0, column = 4)
         self.gender_combobox.grid(row=1, column = 4,padx =10, pady=5)
@@ -58,17 +58,17 @@ class UserInterface:
     #Defining method for Address data
     def address(self):
         #Address labels
-        self.address_title=tk.Label(self.personal_info_frame, text="Current Address:", font=("Tahoma", 10, "bold"))
+        self.address_title=tk.Label(self.personal_info_frame, text="Current Address:", font=("Tahoma", 10, "bold"), bg="lavender")
         self.address_title.grid(row=2, column=0, sticky="w")
-        self.label_street_address = tk.Label(self.personal_info_frame, text="Street/Blck/House No.")
+        self.label_street_address = tk.Label(self.personal_info_frame, text="Street/Blck/House No.", bg="lavender")
         self.label_street_address.grid(row=3, column=0)
-        self.label_city_address = tk.Label(self.personal_info_frame, text="City/Town")
+        self.label_city_address = tk.Label(self.personal_info_frame, text="City/Town", bg="lavender")
         self.label_city_address.grid(row=3, column=1)
-        self.label_state_address = tk.Label(self.personal_info_frame, text="State/Province")
+        self.label_state_address = tk.Label(self.personal_info_frame, text="State/Province", bg="lavender")
         self.label_state_address.grid(row=3, column=2)
-        self.label_country_address = tk.Label(self.personal_info_frame, text="Country")
+        self.label_country_address = tk.Label(self.personal_info_frame, text="Country", bg="lavender")
         self.label_country_address.grid(row=3, column=3)
-        self.label_postal_code = tk.Label(self.personal_info_frame, text="Postal Code")
+        self.label_postal_code = tk.Label(self.personal_info_frame, text="Postal Code", bg="lavender")
         self.label_postal_code.grid(row=3, column=4)
 
         #Address entry fields
@@ -86,21 +86,21 @@ class UserInterface:
     #Defining method for contact info's data
     def contact_info(self):
         #Contact Information Title
-        self.contact_info_title=tk.Label(self.personal_info_frame, text="Contact Information:", font=("Tahoma", 10, "bold"))
+        self.contact_info_title=tk.Label(self.personal_info_frame, text="Contact Information:", font=("Tahoma", 10, "bold"), bg="lavender")
         self.contact_info_title.grid(row=5, column=0, sticky="w")
         
         #Contact Information Labels
-        self.label_phone_number = tk.Label(self.personal_info_frame, text="Phone Number")
+        self.label_phone_number = tk.Label(self.personal_info_frame, text="Phone Number", bg="lavender")
         self.label_phone_number.grid(row=6, column=0)
-        self.label_email = tk.Label(self.personal_info_frame, text="Email")
+        self.label_email = tk.Label(self.personal_info_frame, text="Email", bg="lavender")
         self.label_email.grid(row=6, column=1)
-        self.label_contact_person = tk.Label(self.personal_info_frame, text="Contact Person:")
+        self.label_contact_person = tk.Label(self.personal_info_frame, text="Contact Person:", bg="lavender")
         self.label_contact_person.grid(row=6, column=2)
-        self.label_contperson_num = tk.Label(self.personal_info_frame, text="Phone Number:")
+        self.label_contperson_num = tk.Label(self.personal_info_frame, text="Phone Number:", bg="lavender")
         self.label_contperson_num.grid(row=7, column=2)
-        self.label_contperson_email = tk.Label(self.personal_info_frame, text="Email:")
+        self.label_contperson_email = tk.Label(self.personal_info_frame, text="Email:", bg="lavender")
         self.label_contperson_email.grid(row=8, column=2)
-        self.label_contperson_rel = tk.Label(self.personal_info_frame, text="Relationship w/ Contact Person")
+        self.label_contperson_rel = tk.Label(self.personal_info_frame, text="Relationship w/ Contact Person", bg="lavender")
         self.label_contperson_rel.grid(row=8, column=0)
         
         #Contact Information entry fields
@@ -124,7 +124,7 @@ class UserInterface:
     #Saving Health Declaration
     def health_info(self):
         #Health Info Frame
-        self.health_info_frame = tk.LabelFrame(self.frame, text = "Health Declaration\n", font=("", 11, "bold"))
+        self.health_info_frame = tk.LabelFrame(self.frame, text = "Health Declaration\n", font=("", 11, "bold"),bg="lavender", borderwidth=3)
         self.health_info_frame.grid(row= 1, column=0,sticky="news" ,padx=10, pady=10)
         
         #Calling info methods
@@ -136,7 +136,7 @@ class UserInterface:
 
     #First Question (Vaccination Status)
     def vaccine_status(self):
-        self.label_vaccine = tk.Label(self.health_info_frame, text ="Have you been vaccinated for COVID-19?") #Question label
+        self.label_vaccine = tk.Label(self.health_info_frame, text ="Have you been vaccinated for COVID-19?", bg="lavender") #Question label
         self.label_vaccine.grid(row = 0, column = 0, padx = 5, pady = 5, sticky = "w") #Position
         self.var = tk.StringVar()    #Initializing Variable    
         
@@ -145,12 +145,12 @@ class UserInterface:
         
         #Setting radiobuttons for the question
         for i in range (len(vac_status)):
-            self.input_vaccine = tk.Radiobutton(self.health_info_frame, text=vac_status[i], variable = self.var, value = vac_status[i]) 
+            self.input_vaccine = tk.Radiobutton(self.health_info_frame, text=vac_status[i], variable = self.var, value = vac_status[i], bg="lavender") 
             self.input_vaccine.grid(row = 1+i, column = 0, padx = 0, pady = 0, sticky = "w")	     
    
     #Second Question (Symptoms)
     def symptoms (self):
-        self.label_symptoms = tk.Label(self.health_info_frame, text="Are you experiencing any symptoms in the past 7 days such as:")
+        self.label_symptoms = tk.Label(self.health_info_frame, text="Are you experiencing any symptoms in the past 7 days such as:", bg="lavender")
         self.label_symptoms.grid(row=14, column=0, padx=5, pady=5, sticky="w")
                 
         #Initializing Symptoms option
@@ -160,13 +160,13 @@ class UserInterface:
         #Checking symptoms data 
         for i, option in enumerate(self.options):
             var = tk.StringVar()
-            input_symptom = tk.Checkbutton(self.health_info_frame, text=option, variable=var, onvalue = option, offvalue="", anchor = "w")
+            input_symptom = tk.Checkbutton(self.health_info_frame, text=option, variable=var, onvalue = option, offvalue="", anchor = "w", bg="lavender")
             input_symptom.grid(row=15 + (i // 2), column=i % 2, padx=0, pady=0, sticky="w")
             self.check_symptom.append(var)
     
     #Third Question (Exposure to a probable positive case)
     def exposure(self):
-        self.label_exposure = tk.Label(self.health_info_frame, text ="Have you had exposure to a probable or confirmed case in the last 14 days?")#Question label
+        self.label_exposure = tk.Label(self.health_info_frame, text ="Have you had exposure to a probable or confirmed case in the last 14 days?", bg="lavender")#Question label
         self.label_exposure.grid(row=21, column=0, padx=5, pady= 5, sticky="w") #Position
         self.ex_var = tk.StringVar()    #Initializing Variable    
         
@@ -175,7 +175,7 @@ class UserInterface:
         
         #Setting radiobuttons for the question
         for i in range (len(ex_status)):
-            self.input_exposure = tk.Radiobutton(self.health_info_frame, text=ex_status[i], variable = self.ex_var, value = ex_status[i]) 
+            self.input_exposure = tk.Radiobutton(self.health_info_frame, text=ex_status[i], variable = self.ex_var, value = ex_status[i], bg="lavender") 
             self.input_exposure.grid(row = 22+i, column = 0, padx = 0, pady = 0, sticky = "w")
 
     #Fourth Question (Contact with someone with symptoms)
@@ -183,7 +183,7 @@ class UserInterface:
         self.label_contact = tk.Label(self.health_info_frame, text="Have you had in contact with somebody with body pains\n"
                                                 "headache, sore throat, fever, diarrhea, caugh, colds, shortness of breath,\n"
                                                 "loss of taste or loss of smell in the past 7 days?",
-                                justify="left")  #Question label
+                                justify="left", bg="lavender")  #Question label
         self.label_contact.grid(row=24, column=0, padx=5, pady=5, sticky ="w") #Position
         self.contact_var = tk.StringVar() #Initializing Variable
         
@@ -192,12 +192,12 @@ class UserInterface:
         
         #Setting radiobuttons for the question
         for i in range (len(contact_status)):
-            input_contact = tk.Radiobutton(self.health_info_frame, text=contact_status[i], variable = self.contact_var, value = contact_status[i])
+            input_contact = tk.Radiobutton(self.health_info_frame, text=contact_status[i], variable = self.contact_var, value = contact_status[i], bg="lavender")
             input_contact.grid(row=25+i, column = 0, padx = 0, pady = 0, sticky ="w")
     
     #Fifth Question (If tested for COVID)
     def test (self):
-        self.label_test = tk.Label(self.health_info_frame, text="Have you been tested for COVID-19 in the last 14 days?") #Question label
+        self.label_test = tk.Label(self.health_info_frame, text="Have you been tested for COVID-19 in the last 14 days?", bg="lavender") #Question label
         self.label_test.grid(row = 28, column =0, padx = 5, pady =5, sticky ="w") #Position
         self.test_var = tk.StringVar() #Initializing Variable
         
@@ -206,17 +206,21 @@ class UserInterface:
         
         #Setting radiobuttons for the question
         for i in range (len(test_status)):
-            input_test = tk.Radiobutton(self.health_info_frame, text = test_status[i], variable = self.test_var, value = test_status[i]) 
+            input_test = tk.Radiobutton(self.health_info_frame, text = test_status[i], variable = self.test_var, value = test_status[i], bg="lavender") 
             input_test.grid(row=29+i, column = 0, padx=0, pady=0, sticky ="w")
+
+    def health_info_configure(self):
+        for widget in self.health_info_frame.winfo_children():
+            widget.grid_configure(padx=10, pady=5)
 
     #Do's and Dont's info
     def dos_and_donts(self):
         # Do's and Dont's Frame
-        info_frame = tk.LabelFrame(self.frame, text="Do's and Don'ts\n", font=("", 11, "bold"))
+        info_frame = tk.LabelFrame(self.frame, text="Do's and Don'ts\n", font=("", 11, "bold"),bg="lavender")
         info_frame.grid(row=1, column=1, padx=0, pady=0, sticky="news")
 
         # Label to display the text from the file
-        label_info = tk.Label(info_frame, text=self.show_info())  # Call the show_info() function
+        label_info = tk.Label(info_frame, text=self.show_info(), bg="lavender")  # Call the show_info() function
         label_info.grid(row=0, column=0, padx=5, pady=5, sticky="w")  # Position
 
     #Showing do's and dont's info
@@ -228,7 +232,7 @@ class UserInterface:
             
     #Accepting terms and condition
     def terms_and_condition (self):
-        self.terms_frame = tk.LabelFrame(self.frame, text = "Terms and Condition\n", font=("", 11, "bold"))
+        self.terms_frame = tk.LabelFrame(self.frame, text = "Terms and Condition\n", font=("", 11, "bold"),bg="lavender", borderwidth=3)
         self.terms_frame.grid(row= 2, column=0,sticky="news" ,padx=10, pady=10)
         self.read_terms()
         self.terms_check()
@@ -240,7 +244,7 @@ class UserInterface:
             with open("terms_and_condition.txt", "r") as file:
                 terms_and_condition = file.read()
                 #Showing messagebox
-                messagebox.showinfo("Text from File", terms_and_condition)
+                messagebox.showinfo("Terms and Condition", terms_and_condition)
         except FileNotFoundError:
             messagebox.showerror("Error", "File not found!")
     
@@ -254,7 +258,7 @@ class UserInterface:
         #Checkbutton for terms and condition
         self.accept_terms = tk.StringVar(value = "Terms Not Accepted")
         self.terms_checkbutton = tk.Checkbutton(self.terms_frame, text="I've read and accept the terms and conditions.", 
-                                           variable = self.accept_terms, onvalue="Terms Accepted" ,offvalue="Terms Not Accepted")
+                                           variable = self.accept_terms, onvalue="Terms Accepted" ,offvalue="Terms Not Accepted", bg="lavender")
         self.terms_checkbutton.grid(row=0,column=1)
 
     #Submit button

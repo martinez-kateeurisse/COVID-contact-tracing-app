@@ -13,9 +13,12 @@ from file_handling import FileHandling
 class FormTk(FileHandling):
     def __init__(self):
         self.main = tk.Tk()
-        self.main.title("COVID Contact Tracing APP") #Title
+        self.main.title("COVID Contact Tracing APP - Form") #Title
         self.main.geometry("1020x700")  # Window Size
-
+        self.main.configure(bg="lavender")
+        window_title = tk.Label(self.main, text="COVID CONTACT TRACING FORM", font=("Courier 10 pitch", 14, "bold"),fg="DarkOrchid4", bg="lavender") #Form Title
+        window_title.pack(pady=10)
+        
         # Creating a Canvas
         canvas = tk.Canvas(self.main)
         canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
@@ -29,7 +32,7 @@ class FormTk(FileHandling):
         canvas.bind("<Configure>", lambda e: canvas.configure(scrollregion=canvas.bbox("all")))
 
         # Creating a Frame inside the Canvas
-        self.frame = tk.Frame(canvas)
+        self.frame = tk.Frame(canvas, bg ="lavender")
 
         # Adding the Frame to the Canvas
         canvas.create_window((0, 0), window=self.frame, anchor="nw")
