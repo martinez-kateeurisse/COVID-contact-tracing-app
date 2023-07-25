@@ -97,7 +97,7 @@ class IntroUserInterface():
                 search_entry.config(fg="gray")  # Change the text color to gray
 
         # Create the entry field with placeholder text
-        search_entry = tk.Entry(self.intro, font=("Constantia", 18),width=30, fg="gray")
+        search_entry = tk.Entry(self.intro, font=("Courier 10 pitch", 18),width=30, fg="gray")
         search_entry.insert(0, "Search for user data")  # Set the initial placeholder text
         search_entry.place(x=550, y=250)
         # Bind events to the entry field
