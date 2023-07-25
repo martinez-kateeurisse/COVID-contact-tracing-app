@@ -13,6 +13,7 @@
 import tkinter as tk
 from intro import IntroWindow
 
+#Running the main program
 def main():
     # Create an instance of the IntroWindow class
     gui = IntroWindow()

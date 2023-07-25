@@ -7,6 +7,7 @@ import tkinter as tk
 from tkinter import ttk
 from PIL import Image, ImageTk
 
+#Import classes
 from intro_ui import IntroUserInterface
 from file_handling import FileHandling
 
@@ -44,8 +45,3 @@ class IntroWindow(FileHandling, IntroUserInterface):
 
         # Run mainloop
         self.intro.mainloop()
-
-
-
-
-

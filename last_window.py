@@ -1,3 +1,5 @@
+#This python file will have the last window methods
+
 #Import module
 import tkinter as tk
 from PIL import Image, ImageTk
@@ -32,6 +34,7 @@ class LastWindow:
 
         #Run Mainloop
         self.last.mainloop()
+    
     #Updating background image
     def update_background_image(self):
         # Get the current size of the canvas
@@ -50,6 +53,7 @@ class LastWindow:
         self.update_background_image()
 
     #Add buttons
+    
     #Covid Info button
     def covid_info_button(self):
             # Load the image for the button
@@ -67,6 +71,7 @@ class LastWindow:
             button = tk.Button(self.last, image=button_image, borderwidth=0, command = self.open_covid_info_window)
             button.image = button_image 
             button.place(x=55, y=50)
+    
     #Button for app info
     def app_info_button(self):
         # Load the image for the button
@@ -84,6 +89,7 @@ class LastWindow:
         button = tk.Button(self.last, image=button_image, borderwidth=0, command=self.open_app_info_window)
         button.image = button_image 
         button.place(x=55, y=235) 
+    
     #Button for home
     def home_button(self):
         # Load the image for the button
@@ -101,6 +107,7 @@ class LastWindow:
         button = tk.Button(self.last, image=button_image, borderwidth=0, command = self.back_to_home)
         button.image = button_image 
         button.place(x=55, y=420) 
+    
     #Button for exit
     def exit_button(self):
         # Load the image for the button
@@ -152,6 +159,3 @@ class LastWindow:
     def quit_program(self):
         # quit program
         self.last.destroy()
-
-# Create an instance of the last window class(test)
-#last = LastWindow()

@@ -1,7 +1,8 @@
+#This python file will have the App info window
+
 #Import module
 import tkinter as tk
 from PIL import Image, ImageTk
-
 
 #Create class
 class AppInfo:
@@ -48,7 +49,7 @@ class AppInfo:
         # Create the background image on the canvas
         self.canvas.create_image(0, 0, anchor=tk.NW, image=self.background)
 
-
+    #Resizing image
     def resize_image(self, event):
         # Update the background image when the window is resized
         self.update_background_image()
@@ -71,6 +72,7 @@ class AppInfo:
             button = tk.Button(self.app_info, image=button_image, borderwidth=0, command = self.open_covid_info_window)
             button.image = button_image 
             button.place(x=35, y=180)
+    
     #Button for app info
     def app_info_button(self):
         # Load the image for the button
@@ -88,6 +90,7 @@ class AppInfo:
         button = tk.Button(self.app_info, image=button_image, borderwidth=0)
         button.image = button_image 
         button.place(x=35, y=370) 
+    
     #Button for home
     def home_button(self):
         # Load the image for the button
@@ -105,6 +108,7 @@ class AppInfo:
         button = tk.Button(self.app_info, image=button_image, borderwidth=0, command = self.back_to_home)
         button.image = button_image 
         button.place(x=38, y=550) 
+    
     #Opening app info window
     def open_covid_info_window(self):
         # Close the covid_info window
@@ -122,4 +126,3 @@ class AppInfo:
         from intro import IntroWindow
         # Open the app info window
         self.intro_window = IntroWindow()
-#info = AppInfo()

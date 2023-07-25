@@ -1,13 +1,13 @@
 #Kate Eurisse L. Martinez_BSCPE 1-5_COVID Contact Tracing App
 
 #This python file will have the codes for introduction user interface
+
 #Import Necessary modules
 import tkinter as tk
 from PIL import Image, ImageTk
 from tkinter import PhotoImage
 from form_tk import FormTk
-#from covid_info import CovidInfo
-#from app_info import AppInfo
+
 #Create Class
 class IntroUserInterface():
 #Define instance variables
@@ -91,6 +91,7 @@ class IntroUserInterface():
         self.search_results_listbox = tk.Listbox(self.intro,bg="thistle1", font=("Constantia", 11), width=45, height=13)
         self.search_results_listbox.place(x=590, y=350)
         return search_entry
+    #Search Button
     def search_button(self):
         # Load the image for the button
         image = Image.open("search_button.png")
@@ -114,7 +115,6 @@ class IntroUserInterface():
     def open_form_window(self):
         # Close the introduction window
         self.intro.destroy()
-
         # Create and open the form window
         self.form_window = FormTk()
     

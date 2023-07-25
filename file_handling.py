@@ -99,9 +99,11 @@ class FileHandling(UserInterface):
 
             #opening last window
             self.open_last_window()
+        
         #If terms and condition is not checked, message box will pop up
         else:
             messagebox.showwarning(title="Accepting Terms and Condition", message = "This Contact Tracing Form requires you to accept the terms and Condition inorder to submit. Make sure to read it by pressing the button beside the checkbutton. Thank you!")
+    
     # Search function using the search_csv function
     def search_data(self):
         # Get the search term from the Entry widget

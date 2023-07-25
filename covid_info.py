@@ -1,9 +1,12 @@
+#This python file will have the Covid Info window methods
+
 #Import module
 import tkinter as tk
 from PIL import Image, ImageTk
 
 #Create class
 class CovidInfo:
+    #Create Window
     def __init__(self):
         self.covid_info = tk.Tk()
         self.covid_info.title("COVID Contact Tracing APP - Covid-19 Info")  
@@ -23,14 +26,15 @@ class CovidInfo:
         # Bind the window resize event 
         self.covid_info.bind("<Configure>", self.resize_image)
 
+        #Call the buttons
         self.covid_info_button()
-
         self.app_info_button()
-
         self.home_button()
+       
         # Run the main loop
         self.covid_info.mainloop()
 
+    #Updating background image
     def update_background_image(self):
         # Get the current size of the canvas
         canvas_width = self.canvas.winfo_width()
@@ -64,6 +68,7 @@ class CovidInfo:
             button = tk.Button(self.covid_info, image=button_image, borderwidth=0)
             button.image = button_image 
             button.place(x=35, y=180)
+    
     #Button for app info
     def app_info_button(self):
         # Load the image for the button
@@ -81,6 +86,7 @@ class CovidInfo:
         button = tk.Button(self.covid_info, image=button_image, borderwidth=0, command = self.open_app_info_window)
         button.image = button_image 
         button.place(x=35, y=370) 
+    
     #Button for home
     def home_button(self):
         # Load the image for the button
@@ -116,6 +122,3 @@ class CovidInfo:
         from intro import IntroWindow
         # Open the app info window
         self.intro_window = IntroWindow()
-
-# Create an instance of the CovidInfo class(test)
-#info = CovidInfo()

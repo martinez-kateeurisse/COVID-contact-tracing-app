@@ -5,7 +5,6 @@
 #Import Necessary modules
 import tkinter as tk
 from tkinter import ttk
-from tkinter import messagebox
 
 #Import class
 from file_handling import FileHandling
