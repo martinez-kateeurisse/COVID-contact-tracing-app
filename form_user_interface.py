@@ -230,7 +230,7 @@ class UserInterface:
         self.terms_frame = tk.LabelFrame(self.frame, text = "Terms and Condition\n", font=("", 11, "bold"))
         self.terms_frame.grid(row= 2, column=0,sticky="news" ,padx=10, pady=10)
         self.read_terms()
-
+        self.terms_check()
     #Showing Terms and Conditions
     def show_terms(self):
         try:
@@ -246,9 +246,13 @@ class UserInterface:
     def read_terms(self):
         read_button = tk.Button(self.terms_frame, text="Read Terms and Conditions here", command= self.show_terms)
         read_button.grid(row=0, column=0, padx=10, pady=10)       
+    #Checkbutton for terms and condition
+    def terms_check(self):
         #Checkbutton for terms and condition
-        terms_checkbutton = tk.Checkbutton(self.terms_frame, text="I've read and accept the terms and conditions.")
-        terms_checkbutton.grid(row=0,column=1)
+        self.accept_terms = tk.StringVar(value = "Terms Not Accepted")
+        self.terms_checkbutton = tk.Checkbutton(self.terms_frame, text="I've read and accept the terms and conditions.", 
+                                           variable = self.accept_terms, onvalue="Terms Accepted" ,offvalue="Terms Not Accepted")
+        self.terms_checkbutton.grid(row=0,column=1)
 
     #Submit button
     def submit_button (self):
